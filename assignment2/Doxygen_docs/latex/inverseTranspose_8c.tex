@@ -1,0 +1,73 @@
+\hypertarget{inverseTranspose_8c}{}\doxysection{inverse\+Transpose.\+c File Reference}
+\label{inverseTranspose_8c}\index{inverseTranspose.c@{inverseTranspose.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{inverseTranspose_8c_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is the main function which decryptes the output file and creates a decrypted output file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inverseTranspose_8c_ac0f2228420376f4db7e1274f2b41667c}\label{inverseTranspose_8c_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{inverseTranspose.c@{inverseTranspose.c}!main@{main}}
+\index{main@{main}!inverseTranspose.c@{inverseTranspose.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is the main function which decryptes the output file and creates a decrypted output file. 
+
+
+
+Definition at line 6 of file inverse\+Transpose.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                       \{}
+\DoxyCodeLine{7     \textcolor{keywordtype}{int} n = atoi (argv[1]);}
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} a = atoi (argv[2]);}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} b = atoi (argv[3]);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11         FILE* f = fopen(argv[4], \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(f == NULL)\{}
+\DoxyCodeLine{13         printf(\textcolor{stringliteral}{"File could not be opened"});}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         fseek(f, 0, SEEK\_END);}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} fsize = ftell(f);}
+\DoxyCodeLine{19     rewind(f);}
+\DoxyCodeLine{20     \textcolor{comment}{// printf("The number of characters in the input file is \%d \(\backslash\)n", fsize);}}
+\DoxyCodeLine{21     }
+\DoxyCodeLine{22     \textcolor{keywordtype}{char} array[fsize];}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<fsize; i++)\{}
+\DoxyCodeLine{25         fscanf(f, \textcolor{stringliteral}{"\%c"}, \&array[i]);}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27     fclose(f);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{char} array2[fsize];}
+\DoxyCodeLine{30         \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<fsize; i++)\{}
+\DoxyCodeLine{32         j = (a*i + b)\%n + (i/n)*n;}
+\DoxyCodeLine{33         array2[j] = array[i];}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     FILE* fo = fopen(\textcolor{stringliteral}{"decryptedOutputfile.txt"}, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i  = 0; i<fsize; i++)\{}
+\DoxyCodeLine{38         fprintf(fo, \textcolor{stringliteral}{"\%c"}, array2[i]);}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     fclose(f);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     puts(\textcolor{stringliteral}{"Decrypted file has been created with name as decryptedOutputfile.txt"});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}

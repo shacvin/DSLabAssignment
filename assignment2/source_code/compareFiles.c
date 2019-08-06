@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h> 
-
+//! This is the main function to compare two files, inputsample file and decrypted output file. It gives output as yes or no.
 int main(int argc, const char* argv[]){
 	FILE* fi = fopen(argv[1], "r");
 	FILE* fo = fopen(argv[2], "r");

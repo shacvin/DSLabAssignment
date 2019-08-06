@@ -1,0 +1,58 @@
+\hypertarget{compareFiles_8c}{}\doxysection{compare\+Files.\+c File Reference}
+\label{compareFiles_8c}\index{compareFiles.c@{compareFiles.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{compareFiles_8c_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is the main function to compare two files, inputsample file and decrypted output file. It gives output as yes or no. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{compareFiles_8c_ac0f2228420376f4db7e1274f2b41667c}\label{compareFiles_8c_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{compareFiles.c@{compareFiles.c}!main@{main}}
+\index{main@{main}!compareFiles.c@{compareFiles.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is the main function to compare two files, inputsample file and decrypted output file. It gives output as yes or no. 
+
+
+
+Definition at line 6 of file compare\+Files.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                       \{}
+\DoxyCodeLine{7     FILE* fi = fopen(argv[1], \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{8     FILE* fo = fopen(argv[2], \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{9     \textcolor{keywordtype}{char} c1 = fgetc(fi);}
+\DoxyCodeLine{10     \textcolor{keywordtype}{char} c2 = fgetc(fo);}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{12     \textcolor{keywordflow}{while}(c1!=EOF \&\& c2!=EOF)\{}
+\DoxyCodeLine{13      \textcolor{keywordflow}{if}(c1!=c2)\{}
+\DoxyCodeLine{14      count++;}
+\DoxyCodeLine{15      \textcolor{keywordflow}{break};}
+\DoxyCodeLine{16      \}}
+\DoxyCodeLine{17      c1 = fgetc(fi);}
+\DoxyCodeLine{18      c2 = fgetc(fo);}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordflow}{if}(count==0)\{}
+\DoxyCodeLine{22         puts(\textcolor{stringliteral}{"The files are same!"});}
+\DoxyCodeLine{23     \} }
+\DoxyCodeLine{24     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{25         puts(\textcolor{stringliteral}{"The files are different!"});}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27     fclose(fi);}
+\DoxyCodeLine{28     fclose(fo);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}

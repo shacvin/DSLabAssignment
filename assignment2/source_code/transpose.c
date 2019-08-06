@@ -4,7 +4,7 @@
 #include <string.h> 
 
 
-
+//! This is the main function for encrypting and saving the file in the same directory. It saves the file with name as outputfile.
 int main(int argc, const char *argv[])
 {
 	int n = atoi (argv[1]);

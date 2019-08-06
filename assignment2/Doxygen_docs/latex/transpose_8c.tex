@@ -1,0 +1,88 @@
+\hypertarget{transpose_8c}{}\doxysection{transpose.\+c File Reference}
+\label{transpose_8c}\index{transpose.c@{transpose.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{transpose_8c_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is the main function for encrypting and saving the file in the same directory. It saves the file with name as outputfile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{transpose_8c_ac0f2228420376f4db7e1274f2b41667c}\label{transpose_8c_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{transpose.c@{transpose.c}!main@{main}}
+\index{main@{main}!transpose.c@{transpose.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is the main function for encrypting and saving the file in the same directory. It saves the file with name as outputfile. 
+
+
+
+Definition at line 8 of file transpose.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} n = atoi (argv[1]);}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} a = atoi (argv[2]);}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} b = atoi (argv[3]);}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         FILE* f = fopen(argv[4], \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{15     \textcolor{keywordflow}{if}(f == NULL)\{}
+\DoxyCodeLine{16         printf(\textcolor{stringliteral}{"File could not be opened"});}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19     fseek(f, 0, SEEK\_END);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} fsize = ftell(f);}
+\DoxyCodeLine{21     rewind(f);}
+\DoxyCodeLine{22     }
+\DoxyCodeLine{23     printf(\textcolor{stringliteral}{"The number of characters in the input file is \%d \(\backslash\)n"}, fsize);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} = 0;}
+\DoxyCodeLine{25     \textcolor{keywordflow}{if}(fsize\%n == 0)}
+\DoxyCodeLine{26         \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} = fsize;}
+\DoxyCodeLine{27     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{28         \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} = fsize + n -\/ fsize\%n;}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     \textcolor{keywordtype}{char} array[\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}];}
+\DoxyCodeLine{32     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<=fsize; i++)\{}
+\DoxyCodeLine{33         fscanf(f, \textcolor{stringliteral}{"\%c"}, \&array[i]);}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = fsize ; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{36         array[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     }
+\DoxyCodeLine{39     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{40         printf(\textcolor{stringliteral}{"\%c"}, array[i]);}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{43    }
+\DoxyCodeLine{44     fclose(f);}
+\DoxyCodeLine{45         \textcolor{keywordtype}{char} arr2 [\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}];}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{47     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{48         j = (a*i + b)\%n + (i/n)*n;}
+\DoxyCodeLine{49         arr2[i] = array[j];}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     FILE* fo = fopen(\textcolor{stringliteral}{"outputfile.txt"}, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{54     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i  = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{55         fprintf(fo, \textcolor{stringliteral}{"\%c"}, arr2[i]);}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 fclose(f);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 puts(\textcolor{stringliteral}{"Output file has been created with name as outputfile.txt"});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}

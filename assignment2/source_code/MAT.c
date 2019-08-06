@@ -3,13 +3,13 @@
 #include <stdbool.h>
 #include <string.h> 
 #include <math.h>
-
+//! This are some globally declared variables:size of the input array, bit value and output array.
 int size = 0;
 int bit = 0;
 int** maxArray;
 
 
-
+//! This is the recursive function which gives the output array or maximal array and also gives the values of leaf node, level and initial value(0 or 1).
 void maximalArray(int** a, int i, int j, int k, int l){
 
 	int localSize=k-i+1;
@@ -63,7 +63,7 @@ void maximalArray(int** a, int i, int j, int k, int l){
      }
 
 }
-
+//! This is the main function which reads the input array and calls recursive function. It also allocates memory for the input and output arrays.
 int  main(int argc, const char *argv[])
 {
 	

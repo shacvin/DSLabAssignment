@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h> 
-
+//! This is the main function which decryptes the output file and creates a decrypted output file.
 int main(int argc, const char *argv[]){
     int n = atoi (argv[1]);
 	int a = atoi (argv[2]);

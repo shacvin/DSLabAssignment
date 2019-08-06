@@ -1,0 +1,212 @@
+\hypertarget{MAT_8c}{}\doxysection{M\+A\+T.\+c File Reference}
+\label{MAT_8c}\index{MAT.c@{MAT.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}{maximal\+Array}} (int $\ast$$\ast$a, int i, int j, int k, int l)
+\begin{DoxyCompactList}\small\item\em This is the recursive function which gives the output array or maximal array and also gives the values of leaf node, level and initial value(0 or 1). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{MAT_8c_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is the main function which reads the input array and calls recursive function. It also allocates memory for the input and output arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} = 0
+\begin{DoxyCompactList}\small\item\em This are some globally declared variables\+:size of the input array, bit value and output array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{MAT_8c_a276ec4ea44aa77416c732159c90a37b9}{bit}} = 0
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{max\+Array}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{MAT_8c_ac0f2228420376f4db7e1274f2b41667c}\label{MAT_8c_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{MAT.c@{MAT.c}!main@{main}}
+\index{main@{main}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is the main function which reads the input array and calls recursive function. It also allocates memory for the input and output arrays. 
+
+
+
+Definition at line 67 of file M\+A\+T.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     FILE* f = fopen(argv[1], \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{72     fseek(f, 0, SEEK\_END);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} fsize = (int)pow(ftell(f)/2, 0.5);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     rewind(f);}
+\DoxyCodeLine{77     printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, fsize);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{double} x = (double)log(fsize)/(double)log(2);}
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} y = (int)ceil(x);}
+\DoxyCodeLine{81     \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} = (int)pow(2, y);}
+\DoxyCodeLine{82     printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}});}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84      \mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{maxArray}} = (\textcolor{keywordtype}{int}**)malloc(\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}*));}
+\DoxyCodeLine{85       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} m = 0; m<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; m++)\{}
+\DoxyCodeLine{86         \mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{maxArray}}[m] = (\textcolor{keywordtype}{int}*)malloc(\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{87         memset(\mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{maxArray}}[m],0,\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{88       \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{int}** array = (\textcolor{keywordtype}{int}**)malloc(\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}*));}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{93         array[i] = (\textcolor{keywordtype}{int}*)malloc(\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{97         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; j++)\{}
+\DoxyCodeLine{98             array[i][j] = 0;}
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}-\/fsize; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}-\/fsize; j<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; j++)\{}
+\DoxyCodeLine{104             fscanf(f, \textcolor{stringliteral}{"\%d"}, \&array[i][j]);}
+\DoxyCodeLine{105         \}}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{107     }
+\DoxyCodeLine{108   }
+\DoxyCodeLine{109     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; j++)\{}
+\DoxyCodeLine{111             printf(\textcolor{stringliteral}{"\%d"}, array[i][j]);}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113         puts(\textcolor{stringliteral}{""});}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     puts(\textcolor{stringliteral}{"QuadTree"});}
+\DoxyCodeLine{116     \mbox{\hyperlink{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}{maximalArray}}(array, 0, 0, \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}-\/1, \mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}-\/1);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     puts(\textcolor{stringliteral}{"Maximal Array"});}
+\DoxyCodeLine{119     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; i++)\{}
+\DoxyCodeLine{120         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}; j++)\{}
+\DoxyCodeLine{121             printf(\textcolor{stringliteral}{"\%2d "}, \mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{maxArray}}[i][j]);}
+\DoxyCodeLine{122         \}}
+\DoxyCodeLine{123         puts(\textcolor{stringliteral}{""});}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}\label{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}} 
+\index{MAT.c@{MAT.c}!maximalArray@{maximalArray}}
+\index{maximalArray@{maximalArray}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{maximalArray()}{maximalArray()}}
+{\footnotesize\ttfamily void maximal\+Array (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{a,  }\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k,  }\item[{int}]{l }\end{DoxyParamCaption})}
+
+
+
+This is the recursive function which gives the output array or maximal array and also gives the values of leaf node, level and initial value(0 or 1). 
+
+
+
+Definition at line 13 of file M\+A\+T.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                                       \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} localSize=k-\/i+1;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17   \textcolor{keywordflow}{if}(\mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{maxArray}}[i][j] != 0)\{}
+\DoxyCodeLine{18         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22      \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{23       \textcolor{keywordtype}{int} value = a[i][j];}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25       \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};}
+\DoxyCodeLine{26       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} m = i; m<=k; m++)\{}
+\DoxyCodeLine{27         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} n = j; n<=l; n++)\{}
+\DoxyCodeLine{28            \textcolor{keywordflow}{if}(a[m][n] != value)\{}
+\DoxyCodeLine{29             count++;}
+\DoxyCodeLine{30             b=\textcolor{keyword}{true};}
+\DoxyCodeLine{31             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{32            \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \}}
+\DoxyCodeLine{35         \textcolor{keywordflow}{if} (b)}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39       \}}
+\DoxyCodeLine{40       \textcolor{keywordtype}{int} s = k-\/i+1;}
+\DoxyCodeLine{41       \textcolor{keywordtype}{int} level = (int)(log2(\mbox{\hyperlink{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}{size}})) -\/ (\textcolor{keywordtype}{int})(log2(s));}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43       \textcolor{keywordflow}{if}(count == 0)\{}
+\DoxyCodeLine{44         \mbox{\hyperlink{MAT_8c_a276ec4ea44aa77416c732159c90a37b9}{bit}}++;}
+\DoxyCodeLine{45         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} m = i; m<=k; m++)\{}
+\DoxyCodeLine{46            \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} n = j; n<=l; n++)\{}
+\DoxyCodeLine{47                \mbox{\hyperlink{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}{maxArray}}[m][n] = \mbox{\hyperlink{MAT_8c_a276ec4ea44aa77416c732159c90a37b9}{bit}};}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49       \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51       printf(\textcolor{stringliteral}{"(\%d, \%d, \%d)"}, \mbox{\hyperlink{MAT_8c_a276ec4ea44aa77416c732159c90a37b9}{bit}}, a[i][j], level);}
+\DoxyCodeLine{52       puts(\textcolor{stringliteral}{""});}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54       \}}
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57       \textcolor{keywordflow}{else}\{ }
+\DoxyCodeLine{58       \mbox{\hyperlink{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}{maximalArray}}(a, i, j, i + (localSize/2) -\/ 1, j + (localSize/2) -\/ 1);}
+\DoxyCodeLine{59       \mbox{\hyperlink{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}{maximalArray}}(a, i, j + (localSize/2), i + (localSize/2) -\/ 1, j + localSize -\/ 1);}
+\DoxyCodeLine{60       \mbox{\hyperlink{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}{maximalArray}}(a, i + (localSize/2), j, i + localSize -\/ 1, j + (localSize/2) -\/ 1);}
+\DoxyCodeLine{61       \mbox{\hyperlink{MAT_8c_af838621e0cf0e84dc41213a1c1ad2edc}{maximalArray}}(a, i + (localSize/2), j + (localSize/2), i + localSize -\/ 1, j + localSize -\/ 1);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63      \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{MAT_8c_a276ec4ea44aa77416c732159c90a37b9}\label{MAT_8c_a276ec4ea44aa77416c732159c90a37b9}} 
+\index{MAT.c@{MAT.c}!bit@{bit}}
+\index{bit@{bit}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{bit}{bit}}
+{\footnotesize\ttfamily int bit = 0}
+
+
+
+Definition at line 8 of file M\+A\+T.\+c.
+
+\mbox{\Hypertarget{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}\label{MAT_8c_adbcdc0e340245fa37e8e10ba13d3b7cb}} 
+\index{MAT.c@{MAT.c}!maxArray@{maxArray}}
+\index{maxArray@{maxArray}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{maxArray}{maxArray}}
+{\footnotesize\ttfamily int$\ast$$\ast$ max\+Array}
+
+
+
+Definition at line 9 of file M\+A\+T.\+c.
+
+\mbox{\Hypertarget{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}\label{MAT_8c_a439227feff9d7f55384e8780cfc2eb82}} 
+\index{MAT.c@{MAT.c}!size@{size}}
+\index{size@{size}!MAT.c@{MAT.c}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int size = 0}
+
+
+
+This are some globally declared variables\+:size of the input array, bit value and output array. 
+
+
+
+Definition at line 7 of file M\+A\+T.\+c.
+
