@@ -1,0 +1,414 @@
+\hypertarget{asg1q2_8c}{}\doxysection{asg1q2.\+c File Reference}
+\label{asg1q2_8c}\index{asg1q2.c@{asg1q2.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDeque}{Deque}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$ \mbox{\hyperlink{asg1q2_8c_a038e45568baae031a3c7554a9ff94465}{makedeque}} (int capc)
+\begin{DoxyCompactList}\small\item\em This is to provide memory to the deque and initialize some of its properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{asg1q2_8c_a9aac0c7e12a4453bfa56cacebdef718d}{is\+Full}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to check if deque is full. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{asg1q2_8c_a07f8629370a739d3babf30c8a2303449}{is\+Half}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to check if deque is half. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_aa375b13a209e0c2a35b284b091bc95f7}{capdouble}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to double deque\textquotesingle{}s capacity using realloc function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_adeb4f24291dd3c90acab20aae8751483}{caphalf}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to half deque\textquotesingle{}s capacity using realloc function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}{insert\+Front}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque, int data)
+\begin{DoxyCompactList}\small\item\em This is to insert an element from front and also move elements by one position using memmove function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_a8c0ef5bc3950e227fc84924be8385a24}{insert\+Rear}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque, int data)
+\begin{DoxyCompactList}\small\item\em This is to insert an element from rear. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_adc0b08f834d5dbe8c9a1993b736ea108}{delete\+Front}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to delete an element from front and also move elements by one position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_af0fd9b507c1e0d9273914c67dd3dadca}{delete\+Rear}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to delete an element from rear. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_ac74feb2278759f914d5cc756e2de813b}{printcap}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to print capacity of deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_a9c30f5bdb442011255d0a7dec4f34607}{printsize}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to print size of deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q2_8c_a96f545c535204f6ea1283e3a15a94622}{print\+Deque}} (struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$deque)
+\begin{DoxyCompactList}\small\item\em This is to print the deque. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{asg1q2_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em This is the main function implementing some of the functions made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{asg1q2_8c_aa375b13a209e0c2a35b284b091bc95f7}\label{asg1q2_8c_aa375b13a209e0c2a35b284b091bc95f7}} 
+\index{asg1q2.c@{asg1q2.c}!capdouble@{capdouble}}
+\index{capdouble@{capdouble}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{capdouble()}{capdouble()}}
+{\footnotesize\ttfamily void capdouble (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to double deque\textquotesingle{}s capacity using realloc function. 
+
+
+
+Definition at line 37 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                                    \{}
+\DoxyCodeLine{38     deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}} = deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}}*2;}
+\DoxyCodeLine{39     deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}  = (\textcolor{keywordtype}{int}*)realloc(deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}, deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_adeb4f24291dd3c90acab20aae8751483}\label{asg1q2_8c_adeb4f24291dd3c90acab20aae8751483}} 
+\index{asg1q2.c@{asg1q2.c}!caphalf@{caphalf}}
+\index{caphalf@{caphalf}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{caphalf()}{caphalf()}}
+{\footnotesize\ttfamily void caphalf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to half deque\textquotesingle{}s capacity using realloc function. 
+
+
+
+Definition at line 42 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42                                  \{}
+\DoxyCodeLine{43     deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}} = (deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}})/2;}
+\DoxyCodeLine{44     deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}} = (\textcolor{keywordtype}{int}*)realloc(deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}, deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_adc0b08f834d5dbe8c9a1993b736ea108}\label{asg1q2_8c_adc0b08f834d5dbe8c9a1993b736ea108}} 
+\index{asg1q2.c@{asg1q2.c}!deleteFront@{deleteFront}}
+\index{deleteFront@{deleteFront}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{deleteFront()}{deleteFront()}}
+{\footnotesize\ttfamily void delete\+Front (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to delete an element from front and also move elements by one position. 
+
+
+
+Definition at line 70 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70                                      \{}
+\DoxyCodeLine{71     }
+\DoxyCodeLine{72     \textcolor{keywordflow}{if}(deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}} == -\/1)}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74         printf(\textcolor{stringliteral}{"No elements in the array"});}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} removeval = deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[0];}
+\DoxyCodeLine{77     memmove(\&(deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[0]), \&(deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[1]), deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{78     deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}}-\/-\/;}
+\DoxyCodeLine{79     deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}}-\/-\/;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keywordflow}{if}(\mbox{\hyperlink{asg1q2_8c_a07f8629370a739d3babf30c8a2303449}{isHalf}}(deque))\{}
+\DoxyCodeLine{82        \mbox{\hyperlink{asg1q2_8c_adeb4f24291dd3c90acab20aae8751483}{caphalf}}(deque);}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_af0fd9b507c1e0d9273914c67dd3dadca}\label{asg1q2_8c_af0fd9b507c1e0d9273914c67dd3dadca}} 
+\index{asg1q2.c@{asg1q2.c}!deleteRear@{deleteRear}}
+\index{deleteRear@{deleteRear}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{deleteRear()}{deleteRear()}}
+{\footnotesize\ttfamily void delete\+Rear (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to delete an element from rear. 
+
+
+
+Definition at line 86 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                                     \{}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordflow}{if}(deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}} == -\/1)}
+\DoxyCodeLine{90     \{}
+\DoxyCodeLine{91         printf(\textcolor{stringliteral}{"No elements in the array"});}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} removeval = deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}}];}
+\DoxyCodeLine{94     deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}}-\/-\/;}
+\DoxyCodeLine{95     deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}}-\/-\/;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keywordflow}{if}(\mbox{\hyperlink{asg1q2_8c_a07f8629370a739d3babf30c8a2303449}{isHalf}}(deque))\{}
+\DoxyCodeLine{98        \mbox{\hyperlink{asg1q2_8c_adeb4f24291dd3c90acab20aae8751483}{caphalf}}(deque);}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}\label{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}} 
+\index{asg1q2.c@{asg1q2.c}!insertFront@{insertFront}}
+\index{insertFront@{insertFront}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{insertFront()}{insertFront()}}
+{\footnotesize\ttfamily void insert\+Front (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+This is to insert an element from front and also move elements by one position using memmove function. 
+
+
+
+Definition at line 47 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{ }
+\DoxyCodeLine{49     \textcolor{keywordflow}{if}(\mbox{\hyperlink{asg1q2_8c_a9aac0c7e12a4453bfa56cacebdef718d}{isFull}}(deque))\{}
+\DoxyCodeLine{50       \mbox{\hyperlink{asg1q2_8c_aa375b13a209e0c2a35b284b091bc95f7}{capdouble}}(deque);}
+\DoxyCodeLine{51       }
+\DoxyCodeLine{52     \} }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     memmove(\&(deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[1]), \&(deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[0]), deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{55     deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[0] = data;}
+\DoxyCodeLine{56     deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}}++;}
+\DoxyCodeLine{57     deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}}++;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a8c0ef5bc3950e227fc84924be8385a24}\label{asg1q2_8c_a8c0ef5bc3950e227fc84924be8385a24}} 
+\index{asg1q2.c@{asg1q2.c}!insertRear@{insertRear}}
+\index{insertRear@{insertRear}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{insertRear()}{insertRear()}}
+{\footnotesize\ttfamily void insert\+Rear (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+This is to insert an element from rear. 
+
+
+
+Definition at line 61 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61                                               \{}
+\DoxyCodeLine{62     \textcolor{keywordflow}{if}(\mbox{\hyperlink{asg1q2_8c_a9aac0c7e12a4453bfa56cacebdef718d}{isFull}}(deque))\{}
+\DoxyCodeLine{63         \mbox{\hyperlink{asg1q2_8c_aa375b13a209e0c2a35b284b091bc95f7}{capdouble}}(deque);}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65     deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}}++;}
+\DoxyCodeLine{66     deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}}] = data;}
+\DoxyCodeLine{67     deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}}++;}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a9aac0c7e12a4453bfa56cacebdef718d}\label{asg1q2_8c_a9aac0c7e12a4453bfa56cacebdef718d}} 
+\index{asg1q2.c@{asg1q2.c}!isFull@{isFull}}
+\index{isFull@{isFull}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily bool is\+Full (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to check if deque is full. 
+
+
+
+Definition at line 27 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27                                 \{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return}(deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}} == deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}});}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a07f8629370a739d3babf30c8a2303449}\label{asg1q2_8c_a07f8629370a739d3babf30c8a2303449}} 
+\index{asg1q2.c@{asg1q2.c}!isHalf@{isHalf}}
+\index{isHalf@{isHalf}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{isHalf()}{isHalf()}}
+{\footnotesize\ttfamily bool is\+Half (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to check if deque is half. 
+
+
+
+Definition at line 31 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 \{ }
+\DoxyCodeLine{33     \textcolor{keywordflow}{return} (deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}} == (deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}})/2); }
+\DoxyCodeLine{34 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{asg1q2_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{asg1q2.c@{asg1q2.c}!main@{main}}
+\index{main@{main}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the main function implementing some of the functions made. 
+
+
+
+Definition at line 134 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134               \{}
+\DoxyCodeLine{135     printf(\textcolor{stringliteral}{"Firstly we make a deque of size 4 \(\backslash\)n"});}
+\DoxyCodeLine{136     \textcolor{keyword}{struct }\mbox{\hyperlink{structDeque}{Deque}}* deque = \mbox{\hyperlink{asg1q2_8c_a038e45568baae031a3c7554a9ff94465}{makedeque}}(4);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     printf(\textcolor{stringliteral}{"Now we insert an integer of value 3 in the deque from front \(\backslash\)n"});}
+\DoxyCodeLine{139     \mbox{\hyperlink{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}{insertFront}}(deque, 3);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141   printf(\textcolor{stringliteral}{"Now we insert an integer of value 4 in the deque from rear \(\backslash\)n"});}
+\DoxyCodeLine{142     \mbox{\hyperlink{asg1q2_8c_a8c0ef5bc3950e227fc84924be8385a24}{insertRear}}(deque, 4);}
+\DoxyCodeLine{143    }
+\DoxyCodeLine{144 printf(\textcolor{stringliteral}{"Now we insert an integer of value 3 in the deque from rear \(\backslash\)n"});}
+\DoxyCodeLine{145    \mbox{\hyperlink{asg1q2_8c_a8c0ef5bc3950e227fc84924be8385a24}{insertRear}}(deque, 3);}
+\DoxyCodeLine{146     }
+\DoxyCodeLine{147   printf(\textcolor{stringliteral}{"Now we insert an integer of value 4 in the deque from front \(\backslash\)n"});}
+\DoxyCodeLine{148     \mbox{\hyperlink{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}{insertFront}}(deque, 4);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 printf(\textcolor{stringliteral}{"Now we insert an integer of value 5 in the deque from front \(\backslash\)n"});}
+\DoxyCodeLine{151     \mbox{\hyperlink{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}{insertFront}}(deque, 5);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     printf(\textcolor{stringliteral}{"Now we print the deque \(\backslash\)n"});}
+\DoxyCodeLine{154    \mbox{\hyperlink{asg1q2_8c_a96f545c535204f6ea1283e3a15a94622}{printDeque}}(deque);}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156    printf(\textcolor{stringliteral}{"Now we delete an element from rear of the deque \(\backslash\)n"});}
+\DoxyCodeLine{157     \mbox{\hyperlink{asg1q2_8c_af0fd9b507c1e0d9273914c67dd3dadca}{deleteRear}}(deque);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     printf(\textcolor{stringliteral}{"Now again we print the deque \(\backslash\)n"});}
+\DoxyCodeLine{160     \mbox{\hyperlink{asg1q2_8c_a96f545c535204f6ea1283e3a15a94622}{printDeque}}(deque);}
+\DoxyCodeLine{161     \mbox{\hyperlink{asg1q2_8c_ad042408e7351772c7890c20d6a7e10cc}{insertFront}}(deque, 9);}
+\DoxyCodeLine{162     printf(\textcolor{stringliteral}{"Now we print the size of the deque \(\backslash\)n"});}
+\DoxyCodeLine{163    \mbox{\hyperlink{asg1q2_8c_a9c30f5bdb442011255d0a7dec4f34607}{printsize}}(deque);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165    printf(\textcolor{stringliteral}{"Now we print the capacity(bytes) of the deque \(\backslash\)n"});}
+\DoxyCodeLine{166    \mbox{\hyperlink{asg1q2_8c_ac74feb2278759f914d5cc756e2de813b}{printcap}}(deque);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{171 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a038e45568baae031a3c7554a9ff94465}\label{asg1q2_8c_a038e45568baae031a3c7554a9ff94465}} 
+\index{asg1q2.c@{asg1q2.c}!makedeque@{makedeque}}
+\index{makedeque@{makedeque}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{makedeque()}{makedeque()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structDeque}{Deque}}$\ast$ makedeque (\begin{DoxyParamCaption}\item[{int}]{capc }\end{DoxyParamCaption})}
+
+
+
+This is to provide memory to the deque and initialize some of its properties. 
+
+
+
+Definition at line 18 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                                   \{}
+\DoxyCodeLine{19     \textcolor{keyword}{struct }\mbox{\hyperlink{structDeque}{Deque}}* deq = (\textcolor{keyword}{struct }\mbox{\hyperlink{structDeque}{Deque}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structDeque}{Deque}}));}
+\DoxyCodeLine{20     deq-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}} = (\textcolor{keywordtype}{int}*)malloc(deq-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{21     deq-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}} = capc;}
+\DoxyCodeLine{22     deq-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}} = 0;}
+\DoxyCodeLine{23     deq-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}} = -\/1;}
+\DoxyCodeLine{24     \textcolor{keywordflow}{return} deq;}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_ac74feb2278759f914d5cc756e2de813b}\label{asg1q2_8c_ac74feb2278759f914d5cc756e2de813b}} 
+\index{asg1q2.c@{asg1q2.c}!printcap@{printcap}}
+\index{printcap@{printcap}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{printcap()}{printcap()}}
+{\footnotesize\ttfamily void printcap (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to print capacity of deque. 
+
+
+
+Definition at line 103 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103                                   \{}
+\DoxyCodeLine{104 \textcolor{comment}{//  printf("The current capacity of the deque is \%d \(\backslash\)n" , deque-\/>capacity);}}
+\DoxyCodeLine{105     printf(\textcolor{stringliteral}{"The current capacity (in bytes) of the deque is \%d \(\backslash\)n"} , (deque-\/>\mbox{\hyperlink{structDeque_a414e06744864550223eaea776d7eb21b}{capacity}})*4);}
+\DoxyCodeLine{106 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a96f545c535204f6ea1283e3a15a94622}\label{asg1q2_8c_a96f545c535204f6ea1283e3a15a94622}} 
+\index{asg1q2.c@{asg1q2.c}!printDeque@{printDeque}}
+\index{printDeque@{printDeque}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{printDeque()}{printDeque()}}
+{\footnotesize\ttfamily void print\+Deque (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to print the deque. 
+
+
+
+Definition at line 113 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115     \textcolor{keywordflow}{if}(deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}} != -\/1)}
+\DoxyCodeLine{116     \{}
+\DoxyCodeLine{117     }
+\DoxyCodeLine{118         \textcolor{keywordtype}{int} current = 0;}
+\DoxyCodeLine{119         \textcolor{keywordflow}{while}(current <= deque-\/>\mbox{\hyperlink{structDeque_a554be1ea57f637fc48c80722b3d9b792}{rear}})}
+\DoxyCodeLine{120         \{}
+\DoxyCodeLine{121             printf(\textcolor{stringliteral}{"\%d "}, deque-\/>\mbox{\hyperlink{structDeque_ac4af26e814bd7d4e06dd54ddeff28986}{array}}[current]);}
+\DoxyCodeLine{122             current++;}
+\DoxyCodeLine{123         \}}
+\DoxyCodeLine{124         printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{125         }
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{128     \{}
+\DoxyCodeLine{129         printf(\textcolor{stringliteral}{"Deque is empty \(\backslash\)n"});}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q2_8c_a9c30f5bdb442011255d0a7dec4f34607}\label{asg1q2_8c_a9c30f5bdb442011255d0a7dec4f34607}} 
+\index{asg1q2.c@{asg1q2.c}!printsize@{printsize}}
+\index{printsize@{printsize}!asg1q2.c@{asg1q2.c}}
+\doxysubsubsection{\texorpdfstring{printsize()}{printsize()}}
+{\footnotesize\ttfamily void printsize (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDeque}{Deque}} $\ast$}]{deque }\end{DoxyParamCaption})}
+
+
+
+This is to print size of deque. 
+
+
+
+Definition at line 108 of file asg1q2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108                                    \{}
+\DoxyCodeLine{109     printf(\textcolor{stringliteral}{"The current size of the deque is \%d \(\backslash\)n"}, deque-\/>\mbox{\hyperlink{structDeque_a86560de418dc226271fbdf4856c67d74}{size}});}
+\DoxyCodeLine{110 \}}
+
+\end{DoxyCode}

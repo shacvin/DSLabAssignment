@@ -1,0 +1,353 @@
+\hypertarget{asg1q3_8c}{}\doxysection{asg1q3.\+c File Reference}
+\label{asg1q3_8c}\index{asg1q3.c@{asg1q3.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{asg1q3_8c_a6672cefa7f27dca4fc33679ed72abab5}{read\+File}} (char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em This is the function to read the given input file and pass the data to a array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_a244b41bd478178a80dfff6c69d47adb2}{write\+File}} (char $\ast$new\+File, int $\ast$$\ast$color\+Array)
+\begin{DoxyCompactList}\small\item\em This is the function to write data to a output file from the edited array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_a93832eec42790739937c7d229cf75ab3}{remove\+Red}} ()
+\begin{DoxyCompactList}\small\item\em This is to remove red pixel. It consists of nested for loop to make the red pixel value zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_aad3539a5dd6777c79a1e0cd280b95acf}{remove\+Green}} ()
+\begin{DoxyCompactList}\small\item\em This is to remove green pixel. It consists of nested for loop to make the green pixel value zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}{remove\+Blue}} ()
+\begin{DoxyCompactList}\small\item\em This is to remove blue pixel. It consists of nested for loop to make the blue pixel value zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_a1a50103694320105099407de964f8ab9}{Red\+Only}} ()
+\begin{DoxyCompactList}\small\item\em This is to keep red only. It removes green and blue pixel value using previous functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_a2720bc669d32fd9cc6039a796895777d}{Green\+Only}} ()
+\begin{DoxyCompactList}\small\item\em This is to keep green only. It removes red and blue pixel value using previous functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_aad3e617fca70a9e5a9d10673786dcf71}{Blue\+Only}} ()
+\begin{DoxyCompactList}\small\item\em This is to keep blue only. It removes green and red pixel value using previous functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{asg1q3_8c_ad50d9946f35fc81a82d1e36f15463759}{Get\+Pixel}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em This is to get pixel value at specified coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{asg1q3_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em This is the main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}
+\begin{DoxyCompactList}\small\item\em The three arrays are declared globally. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{asg1q3_8c_aad3e617fca70a9e5a9d10673786dcf71}\label{asg1q3_8c_aad3e617fca70a9e5a9d10673786dcf71}} 
+\index{asg1q3.c@{asg1q3.c}!BlueOnly@{BlueOnly}}
+\index{BlueOnly@{BlueOnly}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{BlueOnly()}{BlueOnly()}}
+{\footnotesize\ttfamily void Blue\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is to keep blue only. It removes green and red pixel value using previous functions. 
+
+
+
+Definition at line 97 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97                \{}
+\DoxyCodeLine{98     \mbox{\hyperlink{asg1q3_8c_a93832eec42790739937c7d229cf75ab3}{removeRed}}();}
+\DoxyCodeLine{99     \mbox{\hyperlink{asg1q3_8c_aad3539a5dd6777c79a1e0cd280b95acf}{removeGreen}}();}
+\DoxyCodeLine{100     \mbox{\hyperlink{asg1q3_8c_a93832eec42790739937c7d229cf75ab3}{removeRed}}();}
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_ad50d9946f35fc81a82d1e36f15463759}\label{asg1q3_8c_ad50d9946f35fc81a82d1e36f15463759}} 
+\index{asg1q3.c@{asg1q3.c}!GetPixel@{GetPixel}}
+\index{GetPixel@{GetPixel}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{GetPixel()}{GetPixel()}}
+{\footnotesize\ttfamily void Get\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+This is to get pixel value at specified coordinates. 
+
+
+
+Definition at line 104 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104                            \{}
+\DoxyCodeLine{105      printf(\textcolor{stringliteral}{"RedPixel = \%d\(\backslash\)n"}, \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[x-\/1][y-\/1]);}
+\DoxyCodeLine{106      printf(\textcolor{stringliteral}{"GreenPixel = \%d\(\backslash\)n"}, \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[x-\/1][y-\/1]);}
+\DoxyCodeLine{107      printf(\textcolor{stringliteral}{"BluePixel = \%d\(\backslash\)n"}, \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[x-\/1][y-\/1]);}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a2720bc669d32fd9cc6039a796895777d}\label{asg1q3_8c_a2720bc669d32fd9cc6039a796895777d}} 
+\index{asg1q3.c@{asg1q3.c}!GreenOnly@{GreenOnly}}
+\index{GreenOnly@{GreenOnly}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{GreenOnly()}{GreenOnly()}}
+{\footnotesize\ttfamily void Green\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is to keep green only. It removes red and blue pixel value using previous functions. 
+
+
+
+Definition at line 90 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                 \{}
+\DoxyCodeLine{91     \mbox{\hyperlink{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}{removeBlue}}();}
+\DoxyCodeLine{92     \mbox{\hyperlink{asg1q3_8c_a93832eec42790739937c7d229cf75ab3}{removeRed}}();}
+\DoxyCodeLine{93     \mbox{\hyperlink{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}{removeBlue}}();}
+\DoxyCodeLine{94 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{asg1q3_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{asg1q3.c@{asg1q3.c}!main@{main}}
+\index{main@{main}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the main function. 
+
+
+
+Definition at line 111 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                \{}
+\DoxyCodeLine{112     \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}} = \mbox{\hyperlink{asg1q3_8c_a6672cefa7f27dca4fc33679ed72abab5}{readFile}}(\textcolor{stringliteral}{"Q3\_ip\_Red.dat"});}
+\DoxyCodeLine{113     \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}} = \mbox{\hyperlink{asg1q3_8c_a6672cefa7f27dca4fc33679ed72abab5}{readFile}}(\textcolor{stringliteral}{"Q3\_ip\_Green.dat"});}
+\DoxyCodeLine{114     \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}} = \mbox{\hyperlink{asg1q3_8c_a6672cefa7f27dca4fc33679ed72abab5}{readFile}}(\textcolor{stringliteral}{"Q3\_ip\_Blue.dat"});}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \mbox{\hyperlink{asg1q3_8c_aad3539a5dd6777c79a1e0cd280b95acf}{removeGreen}}();}
+\DoxyCodeLine{117     \mbox{\hyperlink{asg1q3_8c_a244b41bd478178a80dfff6c69d47adb2}{writeFile}}(\textcolor{stringliteral}{"removeGreen\_out.dat"}, \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{118     \mbox{\hyperlink{asg1q3_8c_a244b41bd478178a80dfff6c69d47adb2}{writeFile}}(\textcolor{stringliteral}{"removeRed\_out.dat"}, \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{119     \mbox{\hyperlink{asg1q3_8c_a244b41bd478178a80dfff6c69d47adb2}{writeFile}}(\textcolor{stringliteral}{"removeBlue\_out.dat"}, \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{120     \mbox{\hyperlink{asg1q3_8c_ad50d9946f35fc81a82d1e36f15463759}{GetPixel}}(320, 650);}
+\DoxyCodeLine{121     }
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a6672cefa7f27dca4fc33679ed72abab5}\label{asg1q3_8c_a6672cefa7f27dca4fc33679ed72abab5}} 
+\index{asg1q3.c@{asg1q3.c}!readFile@{readFile}}
+\index{readFile@{readFile}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ read\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+This is the function to read the given input file and pass the data to a array. 
+
+
+
+Definition at line 11 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11                                \{}
+\DoxyCodeLine{12     FILE* f;}
+\DoxyCodeLine{13     f = fopen(fileName, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int}** fullarray = (\textcolor{keywordtype}{int}**)malloc(953*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}*));}
+\DoxyCodeLine{15     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)\{}
+\DoxyCodeLine{16         fullarray[i] = (\textcolor{keywordtype}{int}*)malloc(1268*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i= 0; i<953; i++)\{}
+\DoxyCodeLine{19     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{20         \textcolor{keywordflow}{if}(j==1267)\{}
+\DoxyCodeLine{21              fscanf(f, \textcolor{stringliteral}{"\%d\(\backslash\)n"}, \&fullarray[i][j]);}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{24             fscanf(f, \textcolor{stringliteral}{"\%d,"}, \&fullarray[i][j]);}
+\DoxyCodeLine{25         \}}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29     fclose(f);}
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} fullarray;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a1a50103694320105099407de964f8ab9}\label{asg1q3_8c_a1a50103694320105099407de964f8ab9}} 
+\index{asg1q3.c@{asg1q3.c}!RedOnly@{RedOnly}}
+\index{RedOnly@{RedOnly}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{RedOnly()}{RedOnly()}}
+{\footnotesize\ttfamily void Red\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is to keep red only. It removes green and blue pixel value using previous functions. 
+
+
+
+Definition at line 83 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83               \{}
+\DoxyCodeLine{84     \mbox{\hyperlink{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}{removeBlue}}();}
+\DoxyCodeLine{85     \mbox{\hyperlink{asg1q3_8c_aad3539a5dd6777c79a1e0cd280b95acf}{removeGreen}}();}
+\DoxyCodeLine{86     \mbox{\hyperlink{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}{removeBlue}}();}
+\DoxyCodeLine{87 \}   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}\label{asg1q3_8c_a5e899ed2c0c1f24b044a9de56d3b0afb}} 
+\index{asg1q3.c@{asg1q3.c}!removeBlue@{removeBlue}}
+\index{removeBlue@{removeBlue}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{removeBlue()}{removeBlue()}}
+{\footnotesize\ttfamily void remove\+Blue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is to remove blue pixel. It consists of nested for loop to make the blue pixel value zero. 
+
+
+
+Definition at line 72 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                  \{}
+\DoxyCodeLine{73 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)\{}
+\DoxyCodeLine{74     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if}((\mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j] > \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j]) \&\& (\mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j] > \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j]))\{}
+\DoxyCodeLine{76             \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j] = 0;}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79 \}}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_aad3539a5dd6777c79a1e0cd280b95acf}\label{asg1q3_8c_aad3539a5dd6777c79a1e0cd280b95acf}} 
+\index{asg1q3.c@{asg1q3.c}!removeGreen@{removeGreen}}
+\index{removeGreen@{removeGreen}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{removeGreen()}{removeGreen()}}
+{\footnotesize\ttfamily void remove\+Green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is to remove green pixel. It consists of nested for loop to make the green pixel value zero. 
+
+
+
+Definition at line 61 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61                   \{}
+\DoxyCodeLine{62 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)\{}
+\DoxyCodeLine{63     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{64         \textcolor{keywordflow}{if}((\mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j] > \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j]) \&\& (\mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j] > \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j]))\{}
+\DoxyCodeLine{65             \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j] = 0;}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a93832eec42790739937c7d229cf75ab3}\label{asg1q3_8c_a93832eec42790739937c7d229cf75ab3}} 
+\index{asg1q3.c@{asg1q3.c}!removeRed@{removeRed}}
+\index{removeRed@{removeRed}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{removeRed()}{removeRed()}}
+{\footnotesize\ttfamily void remove\+Red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is to remove red pixel. It consists of nested for loop to make the red pixel value zero. 
+
+
+
+Definition at line 51 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                 \{}
+\DoxyCodeLine{52 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)\{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{54         \textcolor{keywordflow}{if}((\mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j] > \mbox{\hyperlink{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j]) \&\& (\mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j] > \mbox{\hyperlink{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j]))\{}
+\DoxyCodeLine{55             \mbox{\hyperlink{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j] = 0;}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 \}}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{asg1q3_8c_a244b41bd478178a80dfff6c69d47adb2}\label{asg1q3_8c_a244b41bd478178a80dfff6c69d47adb2}} 
+\index{asg1q3.c@{asg1q3.c}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily void write\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{new\+File,  }\item[{int $\ast$$\ast$}]{color\+Array }\end{DoxyParamCaption})}
+
+
+
+This is the function to write data to a output file from the edited array. 
+
+
+
+Definition at line 34 of file asg1q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                                                \{}
+\DoxyCodeLine{35     FILE* f1;}
+\DoxyCodeLine{36     f1 = fopen(newFile, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)\{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{39         \textcolor{keywordflow}{if}(j==1267)\{}
+\DoxyCodeLine{40              fprintf(f1, \textcolor{stringliteral}{"\%d\(\backslash\)n"}, colorArray[i][j]);}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{43             fprintf(f1, \textcolor{stringliteral}{"\%d,"}, colorArray[i][j]);}
+\DoxyCodeLine{44         \}}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 \}}
+\DoxyCodeLine{47     fclose(f1);}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}\label{asg1q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}} 
+\index{asg1q3.c@{asg1q3.c}!Blue@{Blue}}
+\index{Blue@{Blue}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{Blue}{Blue}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Blue}
+
+
+
+Definition at line 8 of file asg1q3.\+c.
+
+\mbox{\Hypertarget{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}\label{asg1q3_8c_a7a7a73693454051ea5529d512eaed4c0}} 
+\index{asg1q3.c@{asg1q3.c}!Green@{Green}}
+\index{Green@{Green}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{Green}{Green}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Green}
+
+
+
+Definition at line 7 of file asg1q3.\+c.
+
+\mbox{\Hypertarget{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}\label{asg1q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}} 
+\index{asg1q3.c@{asg1q3.c}!Red@{Red}}
+\index{Red@{Red}!asg1q3.c@{asg1q3.c}}
+\doxysubsubsection{\texorpdfstring{Red}{Red}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Red}
+
+
+
+The three arrays are declared globally. 
+
+
+
+Definition at line 6 of file asg1q3.\+c.
+
