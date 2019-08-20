@@ -1,0 +1,857 @@
+\hypertarget{a3q1_8cpp}{}\doxysection{a3q1.\+cpp File Reference}
+\label{a3q1_8cpp}\index{a3q1.cpp@{a3q1.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNode}{Node}}
+\item 
+class \mbox{\hyperlink{classRBTree}{R\+B\+Tree}}
+\item 
+class \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{B\+L\+A\+CK}}~false
+\item 
+\#define \mbox{\hyperlink{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}{R\+ED}}~true
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a05b497562719b0e8a762e24f0bab1736}{inorder\+Helper}} (\mbox{\hyperlink{structNode}{Node}} $\ast$root)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a7f9d39f8cecd6bcb70ada2b9e933eb1e}{insert}} ()
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}{get\+Height\+B\+ST}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node)
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}{get\+Height\+RB}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node)
+\item 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_a42483a5e5fde72f2d5b4c6273925fdd3}{B\+S\+T\+Insert}} (\mbox{\hyperlink{structNode}{Node}} $\ast$root, \mbox{\hyperlink{structNode}{Node}} $\ast$pt)
+\item 
+\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_a2a00ee9ac88405486a57177bd8c5ef7e}{insert\+B\+ST}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node, int key)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}{inorder}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$root)
+\item 
+\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_a37395a08aa08d4362c49c4b8de46b9e8}{create\+A\+VL}} (int a\mbox{[}$\,$\mbox{]}, int first, int last)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a32b4e4472f3c8488a1676fc8734d872d}{B\+S\+Tprint\+Paths}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_afaf841a3aab747f26cf5bbb87a02d200}{B\+S\+Tprint\+Paths\+Recur}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node, int path\mbox{[}$\,$\mbox{]}, int path\+Len)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_ab8800d5f5c03b68e00538075e94c3a4b}{B\+S\+Tprint\+Array}} (int ints\mbox{[}$\,$\mbox{]}, int len)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}{B\+S\+T\+A\+V\+L\+Treepath}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}{B\+T\+S\+A\+V\+Lprintindent}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node, int indent\+No)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a0cbc91ee6729839c28f4ce41f92f9e89}{R\+Bprint\+Paths}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_ae1fa657c03569ae0ce13fd23e9fcda43}{R\+Bprint\+Paths\+Recur}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node, int path\mbox{[}$\,$\mbox{]}, int path\+Len)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a2770cc32e9ecf4099ec2ac46d3d43fc6}{R\+Bprint\+Array}} (int ints\mbox{[}$\,$\mbox{]}, int len)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a063e76fcd43786ea938f9345d24e6579}{R\+B\+Treepath}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_aafd04e5d1a43fa6e1cbe4e9310f3fd60}{R\+Bprintindent}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node, int indent\+No)
+\item 
+\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_aa4b99a79a02396ccaaab05c388aaa2ea}{new\+Node}} (int item)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_aebcc44815b5cadb93afc6c808cb41ce7}{create\+B\+S\+Tarray}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node)
+\item 
+\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_aa64d6e00576fac9df5d02086bb169994}{create\+A\+VL}} (\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$node, int a\mbox{[}$\,$\mbox{]}, int first, int last)
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\item 
+void \mbox{\hyperlink{a3q1_8cpp_a6e884a54071880be1ad84f39be7e11af}{printmenu}} ()
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRBTree}{R\+B\+Tree}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}}
+\item 
+\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{root\+B\+ST}}
+\item 
+\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ \mbox{\hyperlink{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}{root\+A\+VL}}
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_a439227feff9d7f55384e8780cfc2eb82}{size}} = 0
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_ad23d004800e2e781c814348cbdb4039a}{B\+S\+Tarray}} \mbox{[}2000\mbox{]}
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_a6150e0515f7202e2fb518f7206ed97dc}{x}} = 0
+\item 
+int \mbox{\hyperlink{a3q1_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}\label{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}} 
+\index{a3q1.cpp@{a3q1.cpp}!BLACK@{BLACK}}
+\index{BLACK@{BLACK}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BLACK}{BLACK}}
+{\footnotesize\ttfamily \#define B\+L\+A\+CK~false}
+
+
+
+Definition at line 7 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}\label{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}} 
+\index{a3q1.cpp@{a3q1.cpp}!RED@{RED}}
+\index{RED@{RED}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define R\+ED~true}
+
+
+
+Definition at line 8 of file a3q1.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}\label{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}} 
+\index{a3q1.cpp@{a3q1.cpp}!BSTAVLTreepath@{BSTAVLTreepath}}
+\index{BSTAVLTreepath@{BSTAVLTreepath}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BSTAVLTreepath()}{BSTAVLTreepath()}}
+{\footnotesize\ttfamily void B\+S\+T\+A\+V\+L\+Treepath (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 462 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{463 \{}
+\DoxyCodeLine{464     \textcolor{keywordflow}{if}(node == NULL)}
+\DoxyCodeLine{465     \{}
+\DoxyCodeLine{466         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{467     \}}
+\DoxyCodeLine{468         \mbox{\hyperlink{a3q1_8cpp_a32b4e4472f3c8488a1676fc8734d872d}{BSTprintPaths}}(node);}
+\DoxyCodeLine{469         \mbox{\hyperlink{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}{BSTAVLTreepath}}(node -\/> left);}
+\DoxyCodeLine{470         \mbox{\hyperlink{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}{BSTAVLTreepath}}(node -\/> right);}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a42483a5e5fde72f2d5b4c6273925fdd3}\label{a3q1_8cpp_a42483a5e5fde72f2d5b4c6273925fdd3}} 
+\index{a3q1.cpp@{a3q1.cpp}!BSTInsert@{BSTInsert}}
+\index{BSTInsert@{BSTInsert}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BSTInsert()}{BSTInsert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNode}{Node}} $\ast$ B\+S\+T\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{pt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 122 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123 \{ }
+\DoxyCodeLine{124     \textcolor{comment}{/* If the tree is empty, return a new node */}}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if} (root == NULL) }
+\DoxyCodeLine{126        \textcolor{keywordflow}{return} pt; }
+\DoxyCodeLine{127   }
+\DoxyCodeLine{128     \textcolor{comment}{/* Otherwise, recur down the tree */}}
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} (pt-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} < root-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}}) }
+\DoxyCodeLine{130     \{ }
+\DoxyCodeLine{131         root-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}  = \mbox{\hyperlink{a3q1_8cpp_a42483a5e5fde72f2d5b4c6273925fdd3}{BSTInsert}}(root-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}, pt); }
+\DoxyCodeLine{132         root-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = root; }
+\DoxyCodeLine{133     \} }
+\DoxyCodeLine{134     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pt-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} > root-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}}) }
+\DoxyCodeLine{135     \{ }
+\DoxyCodeLine{136         root-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} = \mbox{\hyperlink{a3q1_8cpp_a42483a5e5fde72f2d5b4c6273925fdd3}{BSTInsert}}(root-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}, pt); }
+\DoxyCodeLine{137         root-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = root; }
+\DoxyCodeLine{138     \} }
+\DoxyCodeLine{139   }
+\DoxyCodeLine{140     \textcolor{comment}{/* return the (unchanged) node pointer */}}
+\DoxyCodeLine{141     \textcolor{keywordflow}{return} root; }
+\DoxyCodeLine{142 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_ab8800d5f5c03b68e00538075e94c3a4b}\label{a3q1_8cpp_ab8800d5f5c03b68e00538075e94c3a4b}} 
+\index{a3q1.cpp@{a3q1.cpp}!BSTprintArray@{BSTprintArray}}
+\index{BSTprintArray@{BSTprintArray}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BSTprintArray()}{BSTprintArray()}}
+{\footnotesize\ttfamily void B\+S\+Tprint\+Array (\begin{DoxyParamCaption}\item[{int}]{ints\mbox{[}$\,$\mbox{]},  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 447 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{448 \{  }
+\DoxyCodeLine{449     \textcolor{keywordtype}{int} i;  }
+\DoxyCodeLine{450     \textcolor{keywordflow}{for} (i = 0; i < len; i++)  }
+\DoxyCodeLine{451      \{  \textcolor{keywordflow}{if}(i==len-\/1)\{}
+\DoxyCodeLine{452         cout << ints[i] << \textcolor{stringliteral}{" "};  }
+\DoxyCodeLine{453     \}}
+\DoxyCodeLine{454     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{455         cout << ints[i] << \textcolor{stringliteral}{" -\/> "};}
+\DoxyCodeLine{456     \} }
+\DoxyCodeLine{457      }
+\DoxyCodeLine{458     \}}
+\DoxyCodeLine{459     cout<<endl; }
+\DoxyCodeLine{460 \}  }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a32b4e4472f3c8488a1676fc8734d872d}\label{a3q1_8cpp_a32b4e4472f3c8488a1676fc8734d872d}} 
+\index{a3q1.cpp@{a3q1.cpp}!BSTprintPaths@{BSTprintPaths}}
+\index{BSTprintPaths@{BSTprintPaths}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BSTprintPaths()}{BSTprintPaths()}}
+{\footnotesize\ttfamily void B\+S\+Tprint\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 409 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{410 \{  \textcolor{keywordflow}{if} (node == NULL)}
+\DoxyCodeLine{411     \{}
+\DoxyCodeLine{412         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{413     \}}
+\DoxyCodeLine{414     \textcolor{keywordtype}{int} path[1000];  }
+\DoxyCodeLine{415     \mbox{\hyperlink{a3q1_8cpp_afaf841a3aab747f26cf5bbb87a02d200}{BSTprintPathsRecur}}(node, path, 0);  }
+\DoxyCodeLine{416 \}  }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_afaf841a3aab747f26cf5bbb87a02d200}\label{a3q1_8cpp_afaf841a3aab747f26cf5bbb87a02d200}} 
+\index{a3q1.cpp@{a3q1.cpp}!BSTprintPathsRecur@{BSTprintPathsRecur}}
+\index{BSTprintPathsRecur@{BSTprintPathsRecur}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BSTprintPathsRecur()}{BSTprintPathsRecur()}}
+{\footnotesize\ttfamily void B\+S\+Tprint\+Paths\+Recur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node,  }\item[{int}]{path\mbox{[}$\,$\mbox{]},  }\item[{int}]{path\+Len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 422 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{423 \{  }
+\DoxyCodeLine{424     \textcolor{keywordflow}{if} (node == NULL)  }
+\DoxyCodeLine{425         \textcolor{keywordflow}{return};  }
+\DoxyCodeLine{426       }
+\DoxyCodeLine{427     \textcolor{comment}{/* append this node to the path array */}}
+\DoxyCodeLine{428     path[pathLen] = node-\/>\mbox{\hyperlink{classBSTNode_af5f574b25c304cea0c59c31afbd0dfba}{key}};  }
+\DoxyCodeLine{429     pathLen++;  }
+\DoxyCodeLine{430       }
+\DoxyCodeLine{431     \textcolor{comment}{/* it's a leaf, so print the path that led to here */}}
+\DoxyCodeLine{432     \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}} == NULL \&\& node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}} == NULL)  }
+\DoxyCodeLine{433     \{  }
+\DoxyCodeLine{434         \mbox{\hyperlink{a3q1_8cpp_ab8800d5f5c03b68e00538075e94c3a4b}{BSTprintArray}}(path, pathLen);  }
+\DoxyCodeLine{435     \}  }
+\DoxyCodeLine{436     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{437     \{  }
+\DoxyCodeLine{438         \textcolor{comment}{/* otherwise try both subtrees */}}
+\DoxyCodeLine{439         \mbox{\hyperlink{a3q1_8cpp_afaf841a3aab747f26cf5bbb87a02d200}{BSTprintPathsRecur}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}}, path, pathLen);  }
+\DoxyCodeLine{440         \mbox{\hyperlink{a3q1_8cpp_afaf841a3aab747f26cf5bbb87a02d200}{BSTprintPathsRecur}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}}, path, pathLen);  }
+\DoxyCodeLine{441     \}  }
+\DoxyCodeLine{442 \}  }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}\label{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}} 
+\index{a3q1.cpp@{a3q1.cpp}!BTSAVLprintindent@{BTSAVLprintindent}}
+\index{BTSAVLprintindent@{BTSAVLprintindent}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BTSAVLprintindent()}{BTSAVLprintindent()}}
+{\footnotesize\ttfamily void B\+T\+S\+A\+V\+Lprintindent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node,  }\item[{int}]{indent\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 474 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{475         \{}
+\DoxyCodeLine{476             \textcolor{keywordtype}{int} weight = 0;}
+\DoxyCodeLine{477             \textcolor{keywordflow}{if} (node == NULL)}
+\DoxyCodeLine{478             \{}
+\DoxyCodeLine{479                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{480             \}}
+\DoxyCodeLine{481             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{482             \{}
+\DoxyCodeLine{483                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < indentNo; ++i)}
+\DoxyCodeLine{484                 \{}
+\DoxyCodeLine{485                     cout << \textcolor{stringliteral}{"    "};}
+\DoxyCodeLine{486                 \}}
+\DoxyCodeLine{487                 weight = \mbox{\hyperlink{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}{getHeightBST}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}})-\/\mbox{\hyperlink{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}{getHeightBST}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}});}
+\DoxyCodeLine{488                 cout << node-\/>\mbox{\hyperlink{classBSTNode_af5f574b25c304cea0c59c31afbd0dfba}{key}} << \textcolor{stringliteral}{" ["} << weight << \textcolor{stringliteral}{"]"} << endl;}
+\DoxyCodeLine{489                 \mbox{\hyperlink{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}{BTSAVLprintindent}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}},indentNo+1);}
+\DoxyCodeLine{490                 \mbox{\hyperlink{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}{BTSAVLprintindent}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}},indentNo+1);}
+\DoxyCodeLine{491             \}}
+\DoxyCodeLine{492         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_aa64d6e00576fac9df5d02086bb169994}\label{a3q1_8cpp_aa64d6e00576fac9df5d02086bb169994}} 
+\index{a3q1.cpp@{a3q1.cpp}!createAVL@{createAVL}}
+\index{createAVL@{createAVL}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{createAVL()}{createAVL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}}$\ast$ create\+A\+VL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node,  }\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int}]{first,  }\item[{int}]{last }\end{DoxyParamCaption})}
+
+
+
+Definition at line 397 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{397                                                               \{}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399       \textcolor{keywordflow}{if}(first>last) \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{400         }
+\DoxyCodeLine{401         node =  \mbox{\hyperlink{a3q1_8cpp_aa4b99a79a02396ccaaab05c388aaa2ea}{newNode}}(a[(first+last)/2]);}
+\DoxyCodeLine{402        node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}} = \mbox{\hyperlink{a3q1_8cpp_a37395a08aa08d4362c49c4b8de46b9e8}{createAVL}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}},a, first, ((first+last)/2) -\/ 1);}
+\DoxyCodeLine{403         node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}} = \mbox{\hyperlink{a3q1_8cpp_a37395a08aa08d4362c49c4b8de46b9e8}{createAVL}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}},a, ((first+last)/2) + 1, last);}
+\DoxyCodeLine{404         \textcolor{keywordflow}{return} node;     }
+\DoxyCodeLine{405 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a37395a08aa08d4362c49c4b8de46b9e8}\label{a3q1_8cpp_a37395a08aa08d4362c49c4b8de46b9e8}} 
+\index{a3q1.cpp@{a3q1.cpp}!createAVL@{createAVL}}
+\index{createAVL@{createAVL}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{createAVL()}{createAVL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}}$\ast$ create\+A\+VL (\begin{DoxyParamCaption}\item[{int}]{a\mbox{[}$\,$\mbox{]},  }\item[{int}]{first,  }\item[{int}]{last }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a3q1_8cpp_aebcc44815b5cadb93afc6c808cb41ce7}\label{a3q1_8cpp_aebcc44815b5cadb93afc6c808cb41ce7}} 
+\index{a3q1.cpp@{a3q1.cpp}!createBSTarray@{createBSTarray}}
+\index{createBSTarray@{createBSTarray}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{createBSTarray()}{createBSTarray()}}
+{\footnotesize\ttfamily void create\+B\+S\+Tarray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 372 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{373 \{ }
+\DoxyCodeLine{374     }
+\DoxyCodeLine{375     \textcolor{keywordflow}{if} (node != NULL) }
+\DoxyCodeLine{376     \{ }
+\DoxyCodeLine{377         \mbox{\hyperlink{a3q1_8cpp_aebcc44815b5cadb93afc6c808cb41ce7}{createBSTarray}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}}); }
+\DoxyCodeLine{378         \mbox{\hyperlink{a3q1_8cpp_ad23d004800e2e781c814348cbdb4039a}{BSTarray}}[\mbox{\hyperlink{a3q1_8cpp_a6150e0515f7202e2fb518f7206ed97dc}{x}}++] = node-\/>\mbox{\hyperlink{classBSTNode_af5f574b25c304cea0c59c31afbd0dfba}{key}};}
+\DoxyCodeLine{379         \mbox{\hyperlink{a3q1_8cpp_aebcc44815b5cadb93afc6c808cb41ce7}{createBSTarray}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}}); }
+\DoxyCodeLine{380     \} }
+\DoxyCodeLine{381 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}\label{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}} 
+\index{a3q1.cpp@{a3q1.cpp}!getHeightBST@{getHeightBST}}
+\index{getHeightBST@{getHeightBST}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{getHeightBST()}{getHeightBST()}}
+{\footnotesize\ttfamily int get\+Height\+B\+ST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100         \{}
+\DoxyCodeLine{101             \textcolor{keywordflow}{if} (node ==  NULL)}
+\DoxyCodeLine{102             \{}
+\DoxyCodeLine{103                 \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{104             \}}
+\DoxyCodeLine{105             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{106             \{}
+\DoxyCodeLine{107                 \textcolor{keywordflow}{return} max(\mbox{\hyperlink{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}{getHeightBST}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}}),\mbox{\hyperlink{a3q1_8cpp_ae5783bfcf66232d89b8716bfc337e0bd}{getHeightBST}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}}))+1;}
+\DoxyCodeLine{108             \}}
+\DoxyCodeLine{109         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}\label{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}} 
+\index{a3q1.cpp@{a3q1.cpp}!getHeightRB@{getHeightRB}}
+\index{getHeightRB@{getHeightRB}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{getHeightRB()}{getHeightRB()}}
+{\footnotesize\ttfamily int get\+Height\+RB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 111 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112         \{}
+\DoxyCodeLine{113             \textcolor{keywordflow}{if} (node ==  NULL)}
+\DoxyCodeLine{114             \{}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{118             \{}
+\DoxyCodeLine{119                 \textcolor{keywordflow}{return} max(\mbox{\hyperlink{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}{getHeightRB}}(node-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}),\mbox{\hyperlink{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}{getHeightRB}}(node-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}))+1;}
+\DoxyCodeLine{120             \}}
+\DoxyCodeLine{121         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}\label{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}} 
+\index{a3q1.cpp@{a3q1.cpp}!inorder@{inorder}}
+\index{inorder@{inorder}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily void inorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Definition at line 383 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{384 \{ }
+\DoxyCodeLine{385     }
+\DoxyCodeLine{386     \textcolor{keywordflow}{if} (node != NULL) }
+\DoxyCodeLine{387     \{ }
+\DoxyCodeLine{388         \mbox{\hyperlink{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}{inorder}}(node-\/>left); }
+\DoxyCodeLine{389         printf(\textcolor{stringliteral}{"\%d "}, node-\/>key);}
+\DoxyCodeLine{390         \textcolor{comment}{//BSTarray[x++] = node-\/>key;}}
+\DoxyCodeLine{391         \mbox{\hyperlink{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}{inorder}}(node-\/>right); }
+\DoxyCodeLine{392     \} }
+\DoxyCodeLine{393 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a05b497562719b0e8a762e24f0bab1736}\label{a3q1_8cpp_a05b497562719b0e8a762e24f0bab1736}} 
+\index{a3q1.cpp@{a3q1.cpp}!inorderHelper@{inorderHelper}}
+\index{inorderHelper@{inorderHelper}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{inorderHelper()}{inorderHelper()}}
+{\footnotesize\ttfamily void inorder\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81 \{ }
+\DoxyCodeLine{82     \textcolor{keywordflow}{if} (root == NULL) }
+\DoxyCodeLine{83         \textcolor{keywordflow}{return}; }
+\DoxyCodeLine{84   }
+\DoxyCodeLine{85     \mbox{\hyperlink{a3q1_8cpp_a05b497562719b0e8a762e24f0bab1736}{inorderHelper}}(root-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}); }
+\DoxyCodeLine{86     cout<< root-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << \textcolor{stringliteral}{"  "}; }
+\DoxyCodeLine{87     \mbox{\hyperlink{a3q1_8cpp_a05b497562719b0e8a762e24f0bab1736}{inorderHelper}}(root-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}); }
+\DoxyCodeLine{88 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a7f9d39f8cecd6bcb70ada2b9e933eb1e}\label{a3q1_8cpp_a7f9d39f8cecd6bcb70ada2b9e933eb1e}} 
+\index{a3q1.cpp@{a3q1.cpp}!insert@{insert}}
+\index{insert@{insert}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92              \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} data = 0;}
+\DoxyCodeLine{94     scanf(\textcolor{stringliteral}{"\%d"}, \&data);}
+\DoxyCodeLine{95     \mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{rootBST}} = \mbox{\hyperlink{a3q1_8cpp_a2a00ee9ac88405486a57177bd8c5ef7e}{insertBST}}(\mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{rootBST}}, data);}
+\DoxyCodeLine{96     \mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}}-\/>\mbox{\hyperlink{classRBTree_aec5ca3f258d877b059c8c3aa411b3fc1}{insert}}(data);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a2a00ee9ac88405486a57177bd8c5ef7e}\label{a3q1_8cpp_a2a00ee9ac88405486a57177bd8c5ef7e}} 
+\index{a3q1.cpp@{a3q1.cpp}!insertBST@{insertBST}}
+\index{insertBST@{insertBST}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{insertBST()}{insertBST()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$ insert\+B\+ST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}} $\ast$}]{node,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 350 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{351 \{ }
+\DoxyCodeLine{352     \textcolor{comment}{/* If the tree is empty, return a new node */}}
+\DoxyCodeLine{353     \mbox{\hyperlink{a3q1_8cpp_a439227feff9d7f55384e8780cfc2eb82}{size}}++;}
+\DoxyCodeLine{354     \textcolor{keywordflow}{if} (node == NULL) \textcolor{keywordflow}{return} \mbox{\hyperlink{a3q1_8cpp_aa4b99a79a02396ccaaab05c388aaa2ea}{newNode}}(key); }
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356     \textcolor{comment}{/* Otherwise, recur down the tree */}}
+\DoxyCodeLine{357     \textcolor{keywordflow}{if} (key < node-\/>key) }
+\DoxyCodeLine{358         node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}} = \mbox{\hyperlink{a3q1_8cpp_a2a00ee9ac88405486a57177bd8c5ef7e}{insertBST}}(node-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}}, key); }
+\DoxyCodeLine{359         }
+\DoxyCodeLine{360     \textcolor{keywordflow}{if} (key > node-\/>\mbox{\hyperlink{classBSTNode_af5f574b25c304cea0c59c31afbd0dfba}{key}}) }
+\DoxyCodeLine{361         node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}} = \mbox{\hyperlink{a3q1_8cpp_a2a00ee9ac88405486a57177bd8c5ef7e}{insertBST}}(node-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}}, key);}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363     \textcolor{comment}{/* return the (unchanged) node pointer */}}
+\DoxyCodeLine{364     \textcolor{keywordflow}{return} node; }
+\DoxyCodeLine{365 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{a3q1_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{a3q1.cpp@{a3q1.cpp}!main@{main}}
+\index{main@{main}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 664 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{665 \{ }
+\DoxyCodeLine{666     cout<<endl;}
+\DoxyCodeLine{667     \textcolor{comment}{// rootBST = new BSTNode();}}
+\DoxyCodeLine{668     \textcolor{comment}{// rootAVL = new BSTNode();}}
+\DoxyCodeLine{669     \mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}} = \textcolor{keyword}{new} \mbox{\hyperlink{classRBTree}{RBTree}}();}
+\DoxyCodeLine{670     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{671     \mbox{\hyperlink{a3q1_8cpp_a6e884a54071880be1ad84f39be7e11af}{printmenu}}();\}}
+\DoxyCodeLine{672     \textcolor{keywordflow}{while}(\mbox{\hyperlink{a3q1_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}}!=0);}
+\DoxyCodeLine{673     \textcolor{comment}{// int n = 0;}}
+\DoxyCodeLine{674     \textcolor{comment}{// scanf("\%d", \&n);}}
+\DoxyCodeLine{675     \textcolor{comment}{// menu();}}
+\DoxyCodeLine{676     \textcolor{comment}{//struct node *rootBST = NULL; }}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678     \textcolor{comment}{// rootBST = insert(rootBST, 50); }}
+\DoxyCodeLine{679     \textcolor{comment}{// insert(rootBST, 30); }}
+\DoxyCodeLine{680     \textcolor{comment}{// insert(rootBST, 20); }}
+\DoxyCodeLine{681     \textcolor{comment}{// insert(rootBST, 40); }}
+\DoxyCodeLine{682     \textcolor{comment}{// insert(rootBST, 70); }}
+\DoxyCodeLine{683     \textcolor{comment}{// insert(rootBST, 60); }}
+\DoxyCodeLine{684     \textcolor{comment}{// insert(rootBST, 80); }}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{686     \textcolor{comment}{// print inoder traversal of the BST }}
+\DoxyCodeLine{687     \textcolor{comment}{//inorder(rootBST); }}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689     \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{690 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a2a0e843767aeea4f433a28b9c54f573a}\label{a3q1_8cpp_a2a0e843767aeea4f433a28b9c54f573a}} 
+\index{a3q1.cpp@{a3q1.cpp}!menu@{menu}}
+\index{menu@{menu}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily void menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 593 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{593            \{}
+\DoxyCodeLine{594     \textcolor{keywordtype}{int} n = 0; }
+\DoxyCodeLine{595     scanf(\textcolor{stringliteral}{"\%d"}, \&n);}
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{keywordflow}{switch}(n)\{}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599     \textcolor{comment}{//int data = 0;}}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{602     \textcolor{comment}{//puts("insert a node in the BST and in the red-\/black tree\(\backslash\)n");}}
+\DoxyCodeLine{603     cout<<\textcolor{stringliteral}{"Enter the data to be inserted"}<<endl;}
+\DoxyCodeLine{604     \textcolor{comment}{//scanf("\%d", \&data);}}
+\DoxyCodeLine{605     \mbox{\hyperlink{a3q1_8cpp_a7f9d39f8cecd6bcb70ada2b9e933eb1e}{insert}}();}
+\DoxyCodeLine{606     \textcolor{comment}{// inorder(rootBST);}}
+\DoxyCodeLine{607     \textcolor{comment}{// tree.inorder();}}
+\DoxyCodeLine{608     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{610     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{611     \mbox{\hyperlink{a3q1_8cpp_aebcc44815b5cadb93afc6c808cb41ce7}{createBSTarray}}(\mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{rootBST}});}
+\DoxyCodeLine{612     \mbox{\hyperlink{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}{rootAVL}} = \mbox{\hyperlink{a3q1_8cpp_a37395a08aa08d4362c49c4b8de46b9e8}{createAVL}}(\mbox{\hyperlink{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}{rootAVL}},\mbox{\hyperlink{a3q1_8cpp_ad23d004800e2e781c814348cbdb4039a}{BSTarray}}, 0, \mbox{\hyperlink{a3q1_8cpp_a6150e0515f7202e2fb518f7206ed97dc}{x}}-\/1);}
+\DoxyCodeLine{613     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615     \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617     \mbox{\hyperlink{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}{inorder}}(\mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{rootBST}});}
+\DoxyCodeLine{618     cout<<endl;}
+\DoxyCodeLine{619     \mbox{\hyperlink{a3q1_8cpp_ae672dbd67e9f1cdf4382754cf49b1733}{inorder}}(\mbox{\hyperlink{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}{rootAVL}});}
+\DoxyCodeLine{620     cout<<endl;}
+\DoxyCodeLine{621     \mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}}-\/>\mbox{\hyperlink{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}{inorder}}();}
+\DoxyCodeLine{622     cout<<endl;}
+\DoxyCodeLine{623     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625     \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627     \mbox{\hyperlink{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}{BSTAVLTreepath}}(\mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{rootBST}});}
+\DoxyCodeLine{628     cout<<endl;}
+\DoxyCodeLine{629     \mbox{\hyperlink{a3q1_8cpp_af2096eba0cc86ab3297c105fb1c49ac0}{BSTAVLTreepath}}(\mbox{\hyperlink{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}{rootAVL}});}
+\DoxyCodeLine{630     cout<<endl;}
+\DoxyCodeLine{631     \mbox{\hyperlink{a3q1_8cpp_a063e76fcd43786ea938f9345d24e6579}{RBTreepath}}(\mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}}-\/>\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}});}
+\DoxyCodeLine{632     cout<<endl;}
+\DoxyCodeLine{633     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635     \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{636     }
+\DoxyCodeLine{637     \mbox{\hyperlink{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}{BTSAVLprintindent}}(\mbox{\hyperlink{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}{rootBST}}, 0);}
+\DoxyCodeLine{638     cout<<endl;}
+\DoxyCodeLine{639     \mbox{\hyperlink{a3q1_8cpp_ac1fc70fb61186bf92d25642f3a16e9f2}{BTSAVLprintindent}}(\mbox{\hyperlink{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}{rootAVL}}, 0);}
+\DoxyCodeLine{640     cout<<endl;}
+\DoxyCodeLine{641     \mbox{\hyperlink{a3q1_8cpp_aafd04e5d1a43fa6e1cbe4e9310f3fd60}{RBprintindent}}(\mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}}-\/>\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, 0);}
+\DoxyCodeLine{642     cout<<endl;}
+\DoxyCodeLine{643     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{644 }
+\DoxyCodeLine{645     \textcolor{keywordflow}{case} 6:}
+\DoxyCodeLine{646     \mbox{\hyperlink{a3q1_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} = 0;}
+\DoxyCodeLine{647     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649 }
+\DoxyCodeLine{650     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{651     cout << \textcolor{stringliteral}{"Enter a correct option"} << endl;}
+\DoxyCodeLine{652     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{653 \}}
+\DoxyCodeLine{654 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_aa4b99a79a02396ccaaab05c388aaa2ea}\label{a3q1_8cpp_aa4b99a79a02396ccaaab05c388aaa2ea}} 
+\index{a3q1.cpp@{a3q1.cpp}!newNode@{newNode}}
+\index{newNode@{newNode}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{newNode()}{newNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}}$\ast$ new\+Node (\begin{DoxyParamCaption}\item[{int}]{item }\end{DoxyParamCaption})}
+
+
+
+Definition at line 325 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{326 \{ }
+\DoxyCodeLine{327     \mbox{\hyperlink{classBSTNode}{BSTNode}} *temp = \textcolor{keyword}{new} \mbox{\hyperlink{classBSTNode}{BSTNode}}(); }
+\DoxyCodeLine{328     temp-\/>\mbox{\hyperlink{classBSTNode_af5f574b25c304cea0c59c31afbd0dfba}{key}} = item; }
+\DoxyCodeLine{329     temp-\/>\mbox{\hyperlink{classBSTNode_ad3749f519572d82177ea184efe84beb2}{left}} = temp-\/>\mbox{\hyperlink{classBSTNode_a445bed0d2753704cfc1490ca6d5811a1}{right}} = NULL; }
+\DoxyCodeLine{330     temp-\/>\mbox{\hyperlink{classBSTNode_a9ea543bdf748a75c6401af45ee9407ad}{height}} = 1;}
+\DoxyCodeLine{331     \textcolor{keywordflow}{return} temp; }
+\DoxyCodeLine{332 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a6e884a54071880be1ad84f39be7e11af}\label{a3q1_8cpp_a6e884a54071880be1ad84f39be7e11af}} 
+\index{a3q1.cpp@{a3q1.cpp}!printmenu@{printmenu}}
+\index{printmenu@{printmenu}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{printmenu()}{printmenu()}}
+{\footnotesize\ttfamily void printmenu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 655 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{655                 \{}
+\DoxyCodeLine{656     cout<<\textcolor{stringliteral}{"Enter the choice as follows:"}<<endl;}
+\DoxyCodeLine{657     cout<<\textcolor{stringliteral}{"1. To insert a node in the BST and in the red-\/black tree\(\backslash\)n2. To create AVL tree from the inorder traversal of the BST\(\backslash\)n3. To print the inorder traversal of the BST/AVL/red-\/black tree\(\backslash\)n4. To display all the paths in the BST/AVL tree/red-\/black tree \(\backslash\)n5. To print the BST/AVL tree/red-\/black Tree in the terminal using level-\/wise indentation (print color for red-\/black tree) \(\backslash\)n6. Exit"}<<endl;}
+\DoxyCodeLine{658     \mbox{\hyperlink{a3q1_8cpp_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();}
+\DoxyCodeLine{659 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a2770cc32e9ecf4099ec2ac46d3d43fc6}\label{a3q1_8cpp_a2770cc32e9ecf4099ec2ac46d3d43fc6}} 
+\index{a3q1.cpp@{a3q1.cpp}!RBprintArray@{RBprintArray}}
+\index{RBprintArray@{RBprintArray}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{RBprintArray()}{RBprintArray()}}
+{\footnotesize\ttfamily void R\+Bprint\+Array (\begin{DoxyParamCaption}\item[{int}]{ints\mbox{[}$\,$\mbox{]},  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 530 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{531 \{  }
+\DoxyCodeLine{532     \textcolor{keywordtype}{int} i;  }
+\DoxyCodeLine{533     \textcolor{keywordflow}{for} (i = 0; i < len; i++)  }
+\DoxyCodeLine{534     \{  }
+\DoxyCodeLine{535          \textcolor{keywordflow}{if}(i==len-\/1)\{}
+\DoxyCodeLine{536             cout << ints[i] << \textcolor{stringliteral}{" "};  }
+\DoxyCodeLine{537         \}}
+\DoxyCodeLine{538         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{539             cout << ints[i] << \textcolor{stringliteral}{" -\/> "};}
+\DoxyCodeLine{540         \}}
+\DoxyCodeLine{541     \}  }
+\DoxyCodeLine{542     cout<<endl;  }
+\DoxyCodeLine{543 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_aafd04e5d1a43fa6e1cbe4e9310f3fd60}\label{a3q1_8cpp_aafd04e5d1a43fa6e1cbe4e9310f3fd60}} 
+\index{a3q1.cpp@{a3q1.cpp}!RBprintindent@{RBprintindent}}
+\index{RBprintindent@{RBprintindent}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{RBprintindent()}{RBprintindent()}}
+{\footnotesize\ttfamily void R\+Bprintindent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node,  }\item[{int}]{indent\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 564 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{565         \{}
+\DoxyCodeLine{566             \textcolor{keywordtype}{int} weight = 0;}
+\DoxyCodeLine{567             \textcolor{keywordflow}{if} (node == NULL)}
+\DoxyCodeLine{568             \{}
+\DoxyCodeLine{569                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{570             \}}
+\DoxyCodeLine{571             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{572             \{}
+\DoxyCodeLine{573                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < indentNo; ++i)}
+\DoxyCodeLine{574                 \{}
+\DoxyCodeLine{575                     cout << \textcolor{stringliteral}{"    "};}
+\DoxyCodeLine{576                 \}}
+\DoxyCodeLine{577                 \textcolor{keywordtype}{string} s;}
+\DoxyCodeLine{578                 \textcolor{keywordflow}{if}(node -\/> color)}
+\DoxyCodeLine{579                 \{}
+\DoxyCodeLine{580                     s = \textcolor{stringliteral}{"BLACK"};}
+\DoxyCodeLine{581                 \}}
+\DoxyCodeLine{582                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{583                 \{}
+\DoxyCodeLine{584                     s = \textcolor{stringliteral}{"RED"};}
+\DoxyCodeLine{585                 \}}
+\DoxyCodeLine{586                 weight = \mbox{\hyperlink{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}{getHeightRB}}(node-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}})-\/\mbox{\hyperlink{a3q1_8cpp_ab1963901b890b3c6325000bfe982bb40}{getHeightRB}}(node-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}});}
+\DoxyCodeLine{587                 cout << node-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << \textcolor{stringliteral}{" ["} << weight << \textcolor{stringliteral}{"]"} << \textcolor{stringliteral}{" ["} << s << \textcolor{stringliteral}{"]"} << endl;}
+\DoxyCodeLine{588                 \mbox{\hyperlink{a3q1_8cpp_aafd04e5d1a43fa6e1cbe4e9310f3fd60}{RBprintindent}}(node-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}},indentNo+1);}
+\DoxyCodeLine{589                 \mbox{\hyperlink{a3q1_8cpp_aafd04e5d1a43fa6e1cbe4e9310f3fd60}{RBprintindent}}(node-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}},indentNo+1);}
+\DoxyCodeLine{590             \}}
+\DoxyCodeLine{591         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a0cbc91ee6729839c28f4ce41f92f9e89}\label{a3q1_8cpp_a0cbc91ee6729839c28f4ce41f92f9e89}} 
+\index{a3q1.cpp@{a3q1.cpp}!RBprintPaths@{RBprintPaths}}
+\index{RBprintPaths@{RBprintPaths}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{RBprintPaths()}{RBprintPaths()}}
+{\footnotesize\ttfamily void R\+Bprint\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 495 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{496 \{  }
+\DoxyCodeLine{497     \textcolor{keywordtype}{int} path[1000];  }
+\DoxyCodeLine{498     \mbox{\hyperlink{a3q1_8cpp_ae1fa657c03569ae0ce13fd23e9fcda43}{RBprintPathsRecur}}(node, path, 0);  }
+\DoxyCodeLine{499 \}  }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_ae1fa657c03569ae0ce13fd23e9fcda43}\label{a3q1_8cpp_ae1fa657c03569ae0ce13fd23e9fcda43}} 
+\index{a3q1.cpp@{a3q1.cpp}!RBprintPathsRecur@{RBprintPathsRecur}}
+\index{RBprintPathsRecur@{RBprintPathsRecur}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{RBprintPathsRecur()}{RBprintPathsRecur()}}
+{\footnotesize\ttfamily void R\+Bprint\+Paths\+Recur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node,  }\item[{int}]{path\mbox{[}$\,$\mbox{]},  }\item[{int}]{path\+Len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 505 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{506 \{  }
+\DoxyCodeLine{507     \textcolor{keywordflow}{if} (node == NULL)  }
+\DoxyCodeLine{508         \textcolor{keywordflow}{return};  }
+\DoxyCodeLine{509       }
+\DoxyCodeLine{510     \textcolor{comment}{/* append this node to the path array */}}
+\DoxyCodeLine{511     path[pathLen] = node-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}};  }
+\DoxyCodeLine{512     pathLen++;  }
+\DoxyCodeLine{513       }
+\DoxyCodeLine{514     \textcolor{comment}{/* it's a leaf, so print the path that led to here */}}
+\DoxyCodeLine{515     \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}} == NULL \&\& node-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} == NULL)  }
+\DoxyCodeLine{516     \{  }
+\DoxyCodeLine{517         \mbox{\hyperlink{a3q1_8cpp_a2770cc32e9ecf4099ec2ac46d3d43fc6}{RBprintArray}}(path, pathLen);  }
+\DoxyCodeLine{518     \}  }
+\DoxyCodeLine{519     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{520     \{  }
+\DoxyCodeLine{521         \textcolor{comment}{/* otherwise try both subtrees */}}
+\DoxyCodeLine{522         \mbox{\hyperlink{a3q1_8cpp_ae1fa657c03569ae0ce13fd23e9fcda43}{RBprintPathsRecur}}(node-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}, path, pathLen);  }
+\DoxyCodeLine{523         \mbox{\hyperlink{a3q1_8cpp_ae1fa657c03569ae0ce13fd23e9fcda43}{RBprintPathsRecur}}(node-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}, path, pathLen);  }
+\DoxyCodeLine{524     \}  }
+\DoxyCodeLine{525 \}  }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a3q1_8cpp_a063e76fcd43786ea938f9345d24e6579}\label{a3q1_8cpp_a063e76fcd43786ea938f9345d24e6579}} 
+\index{a3q1.cpp@{a3q1.cpp}!RBTreepath@{RBTreepath}}
+\index{RBTreepath@{RBTreepath}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{RBTreepath()}{RBTreepath()}}
+{\footnotesize\ttfamily void R\+B\+Treepath (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 551 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{552 \{}
+\DoxyCodeLine{553     \textcolor{keywordflow}{if}(node == NULL)}
+\DoxyCodeLine{554     \{}
+\DoxyCodeLine{555         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{556     \}}
+\DoxyCodeLine{557         \textcolor{comment}{//RBprint1();}}
+\DoxyCodeLine{558     \mbox{\hyperlink{a3q1_8cpp_a0cbc91ee6729839c28f4ce41f92f9e89}{RBprintPaths}}(node);}
+\DoxyCodeLine{559         \mbox{\hyperlink{a3q1_8cpp_a063e76fcd43786ea938f9345d24e6579}{RBTreepath}}(node -\/> left);}
+\DoxyCodeLine{560         \mbox{\hyperlink{a3q1_8cpp_a063e76fcd43786ea938f9345d24e6579}{RBTreepath}}(node -\/> right);}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{a3q1_8cpp_ad23d004800e2e781c814348cbdb4039a}\label{a3q1_8cpp_ad23d004800e2e781c814348cbdb4039a}} 
+\index{a3q1.cpp@{a3q1.cpp}!BSTarray@{BSTarray}}
+\index{BSTarray@{BSTarray}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{BSTarray}{BSTarray}}
+{\footnotesize\ttfamily int B\+S\+Tarray\mbox{[}2000\mbox{]}}
+
+
+
+Definition at line 367 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}\label{a3q1_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}} 
+\index{a3q1.cpp@{a3q1.cpp}!c@{c}}
+\index{c@{c}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily int c = 1}
+
+
+
+Definition at line 592 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}\label{a3q1_8cpp_a71f2c2eca13060d0ece0745d858bda1e}} 
+\index{a3q1.cpp@{a3q1.cpp}!rootAVL@{rootAVL}}
+\index{rootAVL@{rootAVL}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{rootAVL}{rootAVL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}}$\ast$ root\+A\+VL}
+
+
+
+Definition at line 76 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}\label{a3q1_8cpp_a5f264828f8b88673832d15e8a7f84725}} 
+\index{a3q1.cpp@{a3q1.cpp}!rootBST@{rootBST}}
+\index{rootBST@{rootBST}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{rootBST}{rootBST}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSTNode}{B\+S\+T\+Node}}$\ast$ root\+B\+ST}
+
+
+
+Definition at line 75 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a439227feff9d7f55384e8780cfc2eb82}\label{a3q1_8cpp_a439227feff9d7f55384e8780cfc2eb82}} 
+\index{a3q1.cpp@{a3q1.cpp}!size@{size}}
+\index{size@{size}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int size = 0}
+
+
+
+Definition at line 343 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}\label{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}} 
+\index{a3q1.cpp@{a3q1.cpp}!tree@{tree}}
+\index{tree@{tree}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{tree}{tree}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRBTree}{R\+B\+Tree}}$\ast$ tree}
+
+
+
+Definition at line 74 of file a3q1.\+cpp.
+
+\mbox{\Hypertarget{a3q1_8cpp_a6150e0515f7202e2fb518f7206ed97dc}\label{a3q1_8cpp_a6150e0515f7202e2fb518f7206ed97dc}} 
+\index{a3q1.cpp@{a3q1.cpp}!x@{x}}
+\index{x@{x}!a3q1.cpp@{a3q1.cpp}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x = 0}
+
+
+
+Definition at line 368 of file a3q1.\+cpp.
+

@@ -1,0 +1,72 @@
+\hypertarget{a3q2_8cpp}{}\doxysection{a3q2.\+cpp File Reference}
+\label{a3q2_8cpp}\index{a3q2.cpp@{a3q2.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a3q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a3q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{a3q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{a3q2.cpp@{a3q2.cpp}!main@{main}}
+\index{main@{main}!a3q2.cpp@{a3q2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file a3q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8           \{}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{10     cin>>n;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} a[n];}
+\DoxyCodeLine{13     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<n; i++)\{}
+\DoxyCodeLine{14         cin>>a[i];}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} xora[n];}
+\DoxyCodeLine{18     xora[0] = a[0];}
+\DoxyCodeLine{19     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i<n; i++)\{}
+\DoxyCodeLine{20         xora[i] = xora[i-\/1]\string^a[i];}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} triplet[n][n];}
+\DoxyCodeLine{24     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<n; i++)\{}
+\DoxyCodeLine{25         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<n; j++)\{}
+\DoxyCodeLine{26             triplet[i][j] = 0;}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{30     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<n-\/1; i++)\{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k = i+1; k<n; k++)\{}
+\DoxyCodeLine{32             \textcolor{keywordflow}{if}(xora[k] == 0)\{}
+\DoxyCodeLine{33               count = k-\/i+count;}
+\DoxyCodeLine{34               triplet[i][k] = 1;}
+\DoxyCodeLine{35             \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37             xora[k] = xora[k]\string^xora[i];}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     cout<<\textcolor{stringliteral}{"The number of triplets are "}<<count<<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{41     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<n; i++)\{}
+\DoxyCodeLine{42         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k = 0; k<n; k++)\{}
+\DoxyCodeLine{43             \textcolor{keywordflow}{if}(triplet[i][k] == 1)\{}
+\DoxyCodeLine{44                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = i+2; j<k+2; j++)\{}
+\DoxyCodeLine{45                     cout<<\textcolor{stringliteral}{"The triplets are as "}<<i+1<<\textcolor{stringliteral}{" "}<<j<<\textcolor{stringliteral}{" "}<<k+1<<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{46                 \}}
+\DoxyCodeLine{47             \}}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}

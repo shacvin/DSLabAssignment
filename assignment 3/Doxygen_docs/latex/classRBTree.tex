@@ -1,0 +1,301 @@
+\hypertarget{classRBTree}{}\doxysection{R\+B\+Tree Class Reference}
+\label{classRBTree}\index{RBTree@{RBTree}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRBTree_a283b146950eb2c90fd8f32c08e6efcc4}{rotate\+Left}} (\mbox{\hyperlink{structNode}{Node}} $\ast$\&, \mbox{\hyperlink{structNode}{Node}} $\ast$\&)
+\item 
+void \mbox{\hyperlink{classRBTree_a0736cae55242b10d8003d632ca7d1273}{rotate\+Right}} (\mbox{\hyperlink{structNode}{Node}} $\ast$\&, \mbox{\hyperlink{structNode}{Node}} $\ast$\&)
+\item 
+void \mbox{\hyperlink{classRBTree_a28ef1781f0d5e1b72cfb3e96a6872d48}{fix\+Violation}} (\mbox{\hyperlink{structNode}{Node}} $\ast$\&, \mbox{\hyperlink{structNode}{Node}} $\ast$\&)
+\item 
+\mbox{\hyperlink{classRBTree_a19921f34f32f777bb3c4b85d4ff1d9de}{R\+B\+Tree}} ()
+\item 
+void \mbox{\hyperlink{classRBTree_aec5ca3f258d877b059c8c3aa411b3fc1}{insert}} (const int \&n)
+\item 
+void \mbox{\hyperlink{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}{inorder}} ()
+\item 
+void \mbox{\hyperlink{classRBTree_a9afd492c7f12fb14d32342a0706ac76e}{R\+Bprint1}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 26 of file a3q1.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRBTree_a19921f34f32f777bb3c4b85d4ff1d9de}\label{classRBTree_a19921f34f32f777bb3c4b85d4ff1d9de}} 
+\index{RBTree@{RBTree}!RBTree@{RBTree}}
+\index{RBTree@{RBTree}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{RBTree()}{RBTree()}}
+{\footnotesize\ttfamily R\+B\+Tree\+::\+R\+B\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 35 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{ \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}} = NULL; \} }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRBTree_a28ef1781f0d5e1b72cfb3e96a6872d48}\label{classRBTree_a28ef1781f0d5e1b72cfb3e96a6872d48}} 
+\index{RBTree@{RBTree}!fixViolation@{fixViolation}}
+\index{fixViolation@{fixViolation}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{fixViolation()}{fixViolation()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::fix\+Violation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$\&}]{root,  }\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$\&}]{pt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 216 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{217 \{ }
+\DoxyCodeLine{218     \mbox{\hyperlink{structNode}{Node}} *parent\_pt = NULL; }
+\DoxyCodeLine{219     \mbox{\hyperlink{structNode}{Node}} *grand\_parent\_pt = NULL; }
+\DoxyCodeLine{220   }
+\DoxyCodeLine{221     \textcolor{keywordflow}{while} ((pt != \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}) \&\& (pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} != \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}) \&\& }
+\DoxyCodeLine{222            (pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} == \mbox{\hyperlink{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}})) }
+\DoxyCodeLine{223     \{ }
+\DoxyCodeLine{224   }
+\DoxyCodeLine{225         parent\_pt = pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}; }
+\DoxyCodeLine{226         grand\_parent\_pt = pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}; }
+\DoxyCodeLine{227   }
+\DoxyCodeLine{228         \textcolor{comment}{/*  Case : A }}
+\DoxyCodeLine{229 \textcolor{comment}{            Parent of pt is left child of Grand-\/parent of pt */}}
+\DoxyCodeLine{230         \textcolor{keywordflow}{if} (parent\_pt == grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}) }
+\DoxyCodeLine{231         \{ }
+\DoxyCodeLine{232   }
+\DoxyCodeLine{233             \mbox{\hyperlink{structNode}{Node}} *uncle\_pt = grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}; }
+\DoxyCodeLine{234   }
+\DoxyCodeLine{235             \textcolor{comment}{/* Case : 1 }}
+\DoxyCodeLine{236 \textcolor{comment}{               The uncle of pt is also red }}
+\DoxyCodeLine{237 \textcolor{comment}{               Only Recoloring required */}}
+\DoxyCodeLine{238             \textcolor{keywordflow}{if} (uncle\_pt != NULL \&\& uncle\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} == \mbox{\hyperlink{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}) }
+\DoxyCodeLine{239             \{ }
+\DoxyCodeLine{240                 grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}; }
+\DoxyCodeLine{241                 parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}; }
+\DoxyCodeLine{242                 uncle\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}; }
+\DoxyCodeLine{243                 pt = grand\_parent\_pt; }
+\DoxyCodeLine{244             \} }
+\DoxyCodeLine{245   }
+\DoxyCodeLine{246             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{247             \{ }
+\DoxyCodeLine{248                 \textcolor{comment}{/* Case : 2 }}
+\DoxyCodeLine{249 \textcolor{comment}{                   pt is right child of its parent }}
+\DoxyCodeLine{250 \textcolor{comment}{                   Left-\/rotation required */}}
+\DoxyCodeLine{251                 \textcolor{keywordflow}{if} (pt == parent\_pt-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}) }
+\DoxyCodeLine{252                 \{ }
+\DoxyCodeLine{253                     \mbox{\hyperlink{classRBTree_a283b146950eb2c90fd8f32c08e6efcc4}{rotateLeft}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, parent\_pt); }
+\DoxyCodeLine{254                     pt = parent\_pt; }
+\DoxyCodeLine{255                     parent\_pt = pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}; }
+\DoxyCodeLine{256                 \} }
+\DoxyCodeLine{257   }
+\DoxyCodeLine{258                 \textcolor{comment}{/* Case : 3 }}
+\DoxyCodeLine{259 \textcolor{comment}{                   pt is left child of its parent }}
+\DoxyCodeLine{260 \textcolor{comment}{                   Right-\/rotation required */}}
+\DoxyCodeLine{261                 \mbox{\hyperlink{classRBTree_a0736cae55242b10d8003d632ca7d1273}{rotateRight}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, grand\_parent\_pt); }
+\DoxyCodeLine{262                 swap(parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}}, grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}}); }
+\DoxyCodeLine{263                 pt = parent\_pt; }
+\DoxyCodeLine{264             \} }
+\DoxyCodeLine{265         \} }
+\DoxyCodeLine{266   }
+\DoxyCodeLine{267         \textcolor{comment}{/* Case : B }}
+\DoxyCodeLine{268 \textcolor{comment}{           Parent of pt is right child of Grand-\/parent of pt */}}
+\DoxyCodeLine{269         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{270         \{ }
+\DoxyCodeLine{271             \mbox{\hyperlink{structNode}{Node}} *uncle\_pt = grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}; }
+\DoxyCodeLine{272   }
+\DoxyCodeLine{273             \textcolor{comment}{/*  Case : 1 }}
+\DoxyCodeLine{274 \textcolor{comment}{                The uncle of pt is also red }}
+\DoxyCodeLine{275 \textcolor{comment}{                Only Recoloring required */}}
+\DoxyCodeLine{276             \textcolor{keywordflow}{if} ((uncle\_pt != NULL) \&\& (uncle\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} == \mbox{\hyperlink{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}})) }
+\DoxyCodeLine{277             \{ }
+\DoxyCodeLine{278                 grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}; }
+\DoxyCodeLine{279                 parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}; }
+\DoxyCodeLine{280                 uncle\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}; }
+\DoxyCodeLine{281                 pt = grand\_parent\_pt; }
+\DoxyCodeLine{282             \} }
+\DoxyCodeLine{283             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{284             \{ }
+\DoxyCodeLine{285                 \textcolor{comment}{/* Case : 2 }}
+\DoxyCodeLine{286 \textcolor{comment}{                   pt is left child of its parent }}
+\DoxyCodeLine{287 \textcolor{comment}{                   Right-\/rotation required */}}
+\DoxyCodeLine{288                 \textcolor{keywordflow}{if} (pt == parent\_pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}) }
+\DoxyCodeLine{289                 \{ }
+\DoxyCodeLine{290                     \mbox{\hyperlink{classRBTree_a0736cae55242b10d8003d632ca7d1273}{rotateRight}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, parent\_pt); }
+\DoxyCodeLine{291                     pt = parent\_pt; }
+\DoxyCodeLine{292                     parent\_pt = pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}; }
+\DoxyCodeLine{293                 \} }
+\DoxyCodeLine{294   }
+\DoxyCodeLine{295                 \textcolor{comment}{/* Case : 3 }}
+\DoxyCodeLine{296 \textcolor{comment}{                   pt is right child of its parent }}
+\DoxyCodeLine{297 \textcolor{comment}{                   Left-\/rotation required */}}
+\DoxyCodeLine{298                 \mbox{\hyperlink{classRBTree_a283b146950eb2c90fd8f32c08e6efcc4}{rotateLeft}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, grand\_parent\_pt); }
+\DoxyCodeLine{299                 swap(parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}}, grand\_parent\_pt-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}}); }
+\DoxyCodeLine{300                 pt = parent\_pt; }
+\DoxyCodeLine{301             \} }
+\DoxyCodeLine{302         \} }
+\DoxyCodeLine{303     \} }
+\DoxyCodeLine{304   }
+\DoxyCodeLine{305     \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}-\/>\mbox{\hyperlink{structNode_ab4722f06caea56c23245657a13b616b3}{color}} = \mbox{\hyperlink{a3q1_8cpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}; }
+\DoxyCodeLine{306 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}\label{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}} 
+\index{RBTree@{RBTree}!inorder@{inorder}}
+\index{inorder@{inorder}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::inorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 321 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{321 \{  \mbox{\hyperlink{a3q1_8cpp_a05b497562719b0e8a762e24f0bab1736}{inorderHelper}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}});\} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRBTree_aec5ca3f258d877b059c8c3aa411b3fc1}\label{classRBTree_aec5ca3f258d877b059c8c3aa411b3fc1}} 
+\index{RBTree@{RBTree}!insert@{insert}}
+\index{insert@{insert}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::insert (\begin{DoxyParamCaption}\item[{const int \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 309 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{310 \{ }
+\DoxyCodeLine{311     \mbox{\hyperlink{structNode}{Node}} *pt = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node}}(data); }
+\DoxyCodeLine{312   }
+\DoxyCodeLine{313     \textcolor{comment}{// Do a normal BST insert }}
+\DoxyCodeLine{314     \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}} = \mbox{\hyperlink{a3q1_8cpp_a42483a5e5fde72f2d5b4c6273925fdd3}{BSTInsert}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, pt); }
+\DoxyCodeLine{315   }
+\DoxyCodeLine{316     \textcolor{comment}{// fix Red Black Tree violations }}
+\DoxyCodeLine{317     \mbox{\hyperlink{classRBTree_a28ef1781f0d5e1b72cfb3e96a6872d48}{fixViolation}}(\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}}, pt); }
+\DoxyCodeLine{318 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRBTree_a9afd492c7f12fb14d32342a0706ac76e}\label{classRBTree_a9afd492c7f12fb14d32342a0706ac76e}} 
+\index{RBTree@{RBTree}!RBprint1@{RBprint1}}
+\index{RBprint1@{RBprint1}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{RBprint1()}{RBprint1()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::\+R\+Bprint1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 546 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{547 \{}
+\DoxyCodeLine{548     \mbox{\hyperlink{a3q1_8cpp_a0cbc91ee6729839c28f4ce41f92f9e89}{RBprintPaths}}(\mbox{\hyperlink{a3q1_8cpp_a42f8bc6377df307105a212a642776e78}{tree}}-\/>\mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}});}
+\DoxyCodeLine{549 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRBTree_a283b146950eb2c90fd8f32c08e6efcc4}\label{classRBTree_a283b146950eb2c90fd8f32c08e6efcc4}} 
+\index{RBTree@{RBTree}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::rotate\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$\&}]{root,  }\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$\&}]{pt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 167 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{168 \{ }
+\DoxyCodeLine{169     \mbox{\hyperlink{structNode}{Node}} *pt\_right = pt-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}; }
+\DoxyCodeLine{170   }
+\DoxyCodeLine{171     pt-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} = pt\_right-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}; }
+\DoxyCodeLine{172   }
+\DoxyCodeLine{173     \textcolor{keywordflow}{if} (pt-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} != NULL) }
+\DoxyCodeLine{174         pt-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = pt; }
+\DoxyCodeLine{175   }
+\DoxyCodeLine{176     pt\_right-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}; }
+\DoxyCodeLine{177   }
+\DoxyCodeLine{178     \textcolor{keywordflow}{if} (pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} == NULL) }
+\DoxyCodeLine{179         \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}} = pt\_right; }
+\DoxyCodeLine{180   }
+\DoxyCodeLine{181     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pt == pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}) }
+\DoxyCodeLine{182         pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}} = pt\_right; }
+\DoxyCodeLine{183   }
+\DoxyCodeLine{184     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{185         pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} = pt\_right; }
+\DoxyCodeLine{186   }
+\DoxyCodeLine{187     pt\_right-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}} = pt; }
+\DoxyCodeLine{188     pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = pt\_right; }
+\DoxyCodeLine{189 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRBTree_a0736cae55242b10d8003d632ca7d1273}\label{classRBTree_a0736cae55242b10d8003d632ca7d1273}} 
+\index{RBTree@{RBTree}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::rotate\+Right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$\&}]{root,  }\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$\&}]{pt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 191 of file a3q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{192 \{ }
+\DoxyCodeLine{193     \mbox{\hyperlink{structNode}{Node}} *pt\_left = pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}; }
+\DoxyCodeLine{194   }
+\DoxyCodeLine{195     pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}} = pt\_left-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}}; }
+\DoxyCodeLine{196   }
+\DoxyCodeLine{197     \textcolor{keywordflow}{if} (pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}} != NULL) }
+\DoxyCodeLine{198         pt-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = pt; }
+\DoxyCodeLine{199   }
+\DoxyCodeLine{200     pt\_left-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}; }
+\DoxyCodeLine{201   }
+\DoxyCodeLine{202     \textcolor{keywordflow}{if} (pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} == NULL) }
+\DoxyCodeLine{203         \mbox{\hyperlink{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}{root}} = pt\_left; }
+\DoxyCodeLine{204   }
+\DoxyCodeLine{205     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pt == pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}) }
+\DoxyCodeLine{206         pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}} = pt\_left; }
+\DoxyCodeLine{207   }
+\DoxyCodeLine{208     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{209         pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}}-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} = pt\_left; }
+\DoxyCodeLine{210   }
+\DoxyCodeLine{211     pt\_left-\/>\mbox{\hyperlink{structNode_afe5916d969cd32f7de1e4ba15580c989}{right}} = pt; }
+\DoxyCodeLine{212     pt-\/>\mbox{\hyperlink{structNode_acb37d05df604a52126aaed3783e35fb2}{parent}} = pt\_left; }
+\DoxyCodeLine{213 \} }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}\label{classRBTree_a4f6043c7ebe229240f90c9f62ac5aff9}} 
+\index{RBTree@{RBTree}!root@{root}}
+\index{root@{root}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNode}{Node}}$\ast$ R\+B\+Tree\+::root}
+
+
+
+Definition at line 29 of file a3q1.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a3q1_8cpp}{a3q1.\+cpp}}\end{DoxyCompactItemize}
