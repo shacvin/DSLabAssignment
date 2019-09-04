@@ -1,0 +1,96 @@
+\hypertarget{a4q3_8cpp}{}\doxysection{a4q3.\+cpp File Reference}
+\label{a4q3_8cpp}\index{a4q3.cpp@{a4q3.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a4q3_8cpp_a3328c12930ed41105eb4ec76057daa40}{max\+Length\+Sub\+Array}} (int arr\mbox{[}$\,$\mbox{]}, int n, int S)
+\item 
+int \mbox{\hyperlink{a4q3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a4q3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{a4q3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{a4q3.cpp@{a4q3.cpp}!main@{main}}
+\index{main@{main}!a4q3.cpp@{a4q3.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file a4q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{46     cout<<\textcolor{stringliteral}{"Enter the number of elements in the array"}<<\textcolor{stringliteral}{"\(\backslash\)n"}; }
+\DoxyCodeLine{47     cin>>n;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} arr[n];}
+\DoxyCodeLine{50     cout<<\textcolor{stringliteral}{"Enter the elements"}<<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{51     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<n; i++)\{}
+\DoxyCodeLine{52        cin>>arr[i];}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{56     cout<<\textcolor{stringliteral}{"Enter the sum"}<<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{57     cin>>sum;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \mbox{\hyperlink{a4q3_8cpp_a3328c12930ed41105eb4ec76057daa40}{maxLengthSubArray}}(arr, n, sum);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a4q3_8cpp_a3328c12930ed41105eb4ec76057daa40}\label{a4q3_8cpp_a3328c12930ed41105eb4ec76057daa40}} 
+\index{a4q3.cpp@{a4q3.cpp}!maxLengthSubArray@{maxLengthSubArray}}
+\index{maxLengthSubArray@{maxLengthSubArray}!a4q3.cpp@{a4q3.cpp}}
+\doxysubsubsection{\texorpdfstring{maxLengthSubArray()}{maxLengthSubArray()}}
+{\footnotesize\ttfamily void max\+Length\+Sub\+Array (\begin{DoxyParamCaption}\item[{int}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{n,  }\item[{int}]{S }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file a4q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     }
+\DoxyCodeLine{9     unordered\_map<int, int> map;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     map[0] = -\/1;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} len = 0;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} ending\_index = -\/1;}
+\DoxyCodeLine{16     }
+\DoxyCodeLine{17     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         }
+\DoxyCodeLine{20         sum += arr[i];}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         }
+\DoxyCodeLine{23         \textcolor{keywordflow}{if} (map.find(sum) == map.end()) \{}
+\DoxyCodeLine{24             map[sum] = i;}
+\DoxyCodeLine{25         \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         }
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} (map.find(sum -\/ S) != map.end() \&\& len < i -\/ map[sum -\/ S])}
+\DoxyCodeLine{29         \{   }
+\DoxyCodeLine{30             len =  i -\/ map[sum -\/ S];}
+\DoxyCodeLine{31             ending\_index = i;}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if}(len!=0)\{}
+\DoxyCodeLine{35     cout<<\textcolor{stringliteral}{"Length of longest subarray is "}<< len <<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{36     cout << \textcolor{stringliteral}{"Index from "} << (ending\_index -\/ len + 1) << \textcolor{stringliteral}{" to "} << ending\_index <<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{37 \}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{39         cout<<\textcolor{stringliteral}{"Not Found"}<<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 \}}
+
+\end{DoxyCode}

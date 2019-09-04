@@ -1,0 +1,178 @@
+\hypertarget{a4q2_8cpp}{}\doxysection{a4q2.\+cpp File Reference}
+\label{a4q2_8cpp}\index{a4q2.cpp@{a4q2.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a4q2_8cpp_a94117604b716c23a14ad59b78a0c59ba}{print\+Solution}} (int $\ast$$\ast$board, int p)
+\item 
+bool \mbox{\hyperlink{a4q2_8cpp_a549d78914b30bc94218343ba1e24f01d}{is\+Safe}} (int $\ast$$\ast$board, int row, int col, int z)
+\item 
+bool \mbox{\hyperlink{a4q2_8cpp_ac26a022743ce07f511699a292964c4d8}{solve\+N\+Q\+Util}} (int $\ast$$\ast$board, int col, int y)
+\item 
+void \mbox{\hyperlink{a4q2_8cpp_a259d29f17dbc99725e48907fc5bb2fed}{solve\+NQ}} (int x)
+\item 
+int \mbox{\hyperlink{a4q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a4q2_8cpp_a549d78914b30bc94218343ba1e24f01d}\label{a4q2_8cpp_a549d78914b30bc94218343ba1e24f01d}} 
+\index{a4q2.cpp@{a4q2.cpp}!isSafe@{isSafe}}
+\index{isSafe@{isSafe}!a4q2.cpp@{a4q2.cpp}}
+\doxysubsubsection{\texorpdfstring{isSafe()}{isSafe()}}
+{\footnotesize\ttfamily bool is\+Safe (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{board,  }\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file a4q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{ }
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} i, j; }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordflow}{for} (i = 0; i < col; i++) }
+\DoxyCodeLine{31         \textcolor{keywordflow}{if} (board[row][i]) }
+\DoxyCodeLine{32             \textcolor{keywordflow}{return} \textcolor{keyword}{false}; }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordflow}{for} (i=row, j=col; i>=0 \&\& j>=0; i-\/-\/, j-\/-\/) }
+\DoxyCodeLine{36         \textcolor{keywordflow}{if} (board[i][j]) }
+\DoxyCodeLine{37             \textcolor{keywordflow}{return} \textcolor{keyword}{false}; }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{for} (i=row, j=col; j>=0 \&\& i<z; i++, j-\/-\/) }
+\DoxyCodeLine{41         \textcolor{keywordflow}{if} (board[i][j]) }
+\DoxyCodeLine{42             \textcolor{keywordflow}{return} \textcolor{keyword}{false}; }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} \textcolor{keyword}{true}; }
+\DoxyCodeLine{45 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a4q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{a4q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{a4q2.cpp@{a4q2.cpp}!main@{main}}
+\index{main@{main}!a4q2.cpp@{a4q2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file a4q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103 \{ }
+\DoxyCodeLine{104     \textcolor{keywordtype}{int} N = 0;}
+\DoxyCodeLine{105     cout<<\textcolor{stringliteral}{"Enter the number N"}<<\textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{106     cin>>N;}
+\DoxyCodeLine{107     \mbox{\hyperlink{a4q2_8cpp_a259d29f17dbc99725e48907fc5bb2fed}{solveNQ}}(N); }
+\DoxyCodeLine{108     \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{109 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a4q2_8cpp_a94117604b716c23a14ad59b78a0c59ba}\label{a4q2_8cpp_a94117604b716c23a14ad59b78a0c59ba}} 
+\index{a4q2.cpp@{a4q2.cpp}!printSolution@{printSolution}}
+\index{printSolution@{printSolution}!a4q2.cpp@{a4q2.cpp}}
+\doxysubsubsection{\texorpdfstring{printSolution()}{printSolution()}}
+{\footnotesize\ttfamily void print\+Solution (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{board,  }\item[{int}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file a4q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{ }
+\DoxyCodeLine{13     \textcolor{keyword}{static} \textcolor{keywordtype}{int} k = 1; }
+\DoxyCodeLine{14     printf(\textcolor{stringliteral}{"\%d-\/\(\backslash\)n"},k++); }
+\DoxyCodeLine{15     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < p; i++) }
+\DoxyCodeLine{16     \{ }
+\DoxyCodeLine{17         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < p; j++) }
+\DoxyCodeLine{18             printf(\textcolor{stringliteral}{" \%d "}, board[i][j]); }
+\DoxyCodeLine{19         printf(\textcolor{stringliteral}{"\(\backslash\)n"}); }
+\DoxyCodeLine{20     \} }
+\DoxyCodeLine{21     printf(\textcolor{stringliteral}{"\(\backslash\)n"}); }
+\DoxyCodeLine{22 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a4q2_8cpp_a259d29f17dbc99725e48907fc5bb2fed}\label{a4q2_8cpp_a259d29f17dbc99725e48907fc5bb2fed}} 
+\index{a4q2.cpp@{a4q2.cpp}!solveNQ@{solveNQ}}
+\index{solveNQ@{solveNQ}!a4q2.cpp@{a4q2.cpp}}
+\doxysubsubsection{\texorpdfstring{solveNQ()}{solveNQ()}}
+{\footnotesize\ttfamily void solve\+NQ (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 79 of file a4q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80 \{ }
+\DoxyCodeLine{81     \textcolor{keywordtype}{int}** board = \textcolor{keyword}{new} \textcolor{keywordtype}{int}*[x];}
+\DoxyCodeLine{82     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<x; i++)\{}
+\DoxyCodeLine{83         board[i] = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[x];}
+\DoxyCodeLine{84     \} }
+\DoxyCodeLine{85     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i= 0; i<x; i++)\{}
+\DoxyCodeLine{86         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < x; j++)}
+\DoxyCodeLine{87         \{}
+\DoxyCodeLine{88             board[i][j] = 0;}
+\DoxyCodeLine{89         \}}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordflow}{if} (\mbox{\hyperlink{a4q2_8cpp_ac26a022743ce07f511699a292964c4d8}{solveNQUtil}}(board, 0, x) == \textcolor{keyword}{false}) }
+\DoxyCodeLine{93     \{ }
+\DoxyCodeLine{94         printf(\textcolor{stringliteral}{"Solution does not exist"}); }
+\DoxyCodeLine{95         return ; }
+\DoxyCodeLine{96     \} }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     return ; }
+\DoxyCodeLine{99 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a4q2_8cpp_ac26a022743ce07f511699a292964c4d8}\label{a4q2_8cpp_ac26a022743ce07f511699a292964c4d8}} 
+\index{a4q2.cpp@{a4q2.cpp}!solveNQUtil@{solveNQUtil}}
+\index{solveNQUtil@{solveNQUtil}!a4q2.cpp@{a4q2.cpp}}
+\doxysubsubsection{\texorpdfstring{solveNQUtil()}{solveNQUtil()}}
+{\footnotesize\ttfamily bool solve\+N\+Q\+Util (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{board,  }\item[{int}]{col,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file a4q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49 \{ }
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     \textcolor{keywordflow}{if} (col == y) }
+\DoxyCodeLine{52     \{ }
+\DoxyCodeLine{53         \mbox{\hyperlink{a4q2_8cpp_a94117604b716c23a14ad59b78a0c59ba}{printSolution}}(board, y); }
+\DoxyCodeLine{54         \textcolor{keywordflow}{return} \textcolor{keyword}{true}; }
+\DoxyCodeLine{55     \} }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     }
+\DoxyCodeLine{58     \textcolor{keywordtype}{bool} res = \textcolor{keyword}{false}; }
+\DoxyCodeLine{59     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < y; i++) }
+\DoxyCodeLine{60     \{ }
+\DoxyCodeLine{61     }
+\DoxyCodeLine{62         \textcolor{keywordflow}{if} ( \mbox{\hyperlink{a4q2_8cpp_a549d78914b30bc94218343ba1e24f01d}{isSafe}}(board, i, col, y) ) }
+\DoxyCodeLine{63         \{ }
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65             board[i][col] = 1; }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         }
+\DoxyCodeLine{68             res = \mbox{\hyperlink{a4q2_8cpp_ac26a022743ce07f511699a292964c4d8}{solveNQUtil}}(board, col + 1, y) || res; }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70             board[i][col] = 0; }
+\DoxyCodeLine{71         \} }
+\DoxyCodeLine{72     \} }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} res; }
+\DoxyCodeLine{76 \} }
+
+\end{DoxyCode}

@@ -38,14 +38,36 @@ int count = 0;
     	}
     }
     cout<<"The number of triplets are "<<count<<"\n";
+     n = count;
+    int tripletarray[n][n][n];
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<n; j++){
+            for(int k = 0; k<n; k++){
+                tripletarray[i][j][k] = 0;
+            }
+        }
+    }
+
+
     for(int i = 0; i<n; i++){
     	for(int k = 0; k<n; k++){
     		if(triplet[i][k] == 1){
     			for(int j = i+2; j<k+2; j++){
-    				cout<<"The triplets are as "<<i+1<<" "<<j<<" "<<k+1<<"\n";
+    				//cout<<"The triplets are as "<<i+1<<" "<<j<<" "<<k+1<<"\n";
+                    tripletarray[i+1][j][k+1] = 1;
     			}
     		}
     	}
+    }
+
+    for(int i = 0; i<n; i++){
+        for(int j = 0; j<n; j++){
+            for(int k = 0; k<n; k++){
+                if(tripletarray[i][j][k] == 1){
+                   cout<<"The triplets are as "<<i<<" "<<j<<" "<<k<<"\n";
+                }
+            }
+        }
     }
         return 0;
 }
