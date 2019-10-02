@@ -1,0 +1,8 @@
+graph MST {
+	graph [ dpi = 1200 ];
+	B -- C [label=2];
+	C -- F [label=2];
+	C -- D [label=3];
+	D -- E [label=3];
+	A -- B [label=4];
+}

@@ -1,0 +1,81 @@
+\hypertarget{a5q2_8cpp}{}\doxysection{a5q2.\+cpp File Reference}
+\label{a5q2_8cpp}\index{a5q2.cpp@{a5q2.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLine}{Line}}
+\item 
+class \mbox{\hyperlink{classMainGraph}{Main\+Graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a5q2_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a5q2_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{a5q2_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{a5q2.cpp@{a5q2.cpp}!main@{main}}
+\index{main@{main}!a5q2.cpp@{a5q2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 209 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{210 \{}
+\DoxyCodeLine{211     ifstream inputFile;}
+\DoxyCodeLine{212     inputFile.open(\textcolor{stringliteral}{"2019\_CSN\_261\_L5\_P2.csv"});}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \mbox{\hyperlink{classMainGraph}{MainGraph}} graphMST;}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     \textcolor{keywordflow}{if} (inputFile.is\_open())}
+\DoxyCodeLine{217     \{}
+\DoxyCodeLine{218         \textcolor{keywordtype}{string} temp;}
+\DoxyCodeLine{219         \textcolor{keywordflow}{while}(getline(inputFile, temp))}
+\DoxyCodeLine{220         \{}
+\DoxyCodeLine{221             \textcolor{keywordtype}{char} v1,v2,comma;}
+\DoxyCodeLine{222             \textcolor{keywordtype}{int} weight;}
+\DoxyCodeLine{223             stringstream s(temp);}
+\DoxyCodeLine{224             s >> v1;}
+\DoxyCodeLine{225             s >> comma;}
+\DoxyCodeLine{226             s >> v2;}
+\DoxyCodeLine{227             s >> comma;}
+\DoxyCodeLine{228             s >> weight;}
+\DoxyCodeLine{229             graphMST.\mbox{\hyperlink{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}{addLine}}(v1, v2, weight);}
+\DoxyCodeLine{230         \}}
+\DoxyCodeLine{231         inputFile.close();}
+\DoxyCodeLine{232     \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234     \mbox{\hyperlink{classMainGraph}{MainGraph}} mst;}
+\DoxyCodeLine{235     \textcolor{keywordtype}{int} V = graphMST.\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordflow}{while}(mst.\mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}} < V -\/ 1)}
+\DoxyCodeLine{238     \{}
+\DoxyCodeLine{239         \mbox{\hyperlink{classLine}{Line}}* edge = graphMST.\mbox{\hyperlink{classMainGraph_a70e13210f9aea6374c737035c055b18e}{popLine}}();}
+\DoxyCodeLine{240         \mbox{\hyperlink{classLine}{Line}}* temp = mst.\mbox{\hyperlink{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}{addLine}}(edge-\/>\mbox{\hyperlink{classLine_af33384845639f805ae71857b92e22a72}{var1}}, edge-\/>\mbox{\hyperlink{classLine_a677a28c6584d9b287f1a259660a15841}{var2}}, edge-\/>\mbox{\hyperlink{classLine_a31e5aa52ebdaab29b082649dc65e5a5f}{weight}});}
+\DoxyCodeLine{241         \textcolor{keywordflow}{if} (mst.\mbox{\hyperlink{classMainGraph_aca2f42dbc3c506ff6617308febfe3a29}{ifClosed}}())}
+\DoxyCodeLine{242         \{}
+\DoxyCodeLine{243             mst.\mbox{\hyperlink{classMainGraph_a2f7e7685e196776e7c5ca3aecb8ce6fb}{remove}}(temp);}
+\DoxyCodeLine{244         \}}
+\DoxyCodeLine{245         \textcolor{keyword}{delete} edge;}
+\DoxyCodeLine{246     \}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     cout << endl;}
+\DoxyCodeLine{249     mst.\mbox{\hyperlink{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}{printGraph}}();}
+\DoxyCodeLine{250     cout << endl;}
+\DoxyCodeLine{251     cout << \textcolor{stringliteral}{"The total edge weight of the MST is : "} << mst.\mbox{\hyperlink{classMainGraph_a0650f129f7c96465c3b25a02ac69b4f9}{getWeight}}() << endl;}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     mst.\mbox{\hyperlink{classMainGraph_a43032af2b68df9be0eb8922b876a8970}{dot}}(\textcolor{stringliteral}{"Krushkal.dot"});}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{256 \}}
+
+\end{DoxyCode}

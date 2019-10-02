@@ -1,0 +1,459 @@
+\hypertarget{classFibonacciHeap}{}\doxysection{Fibonacci\+Heap Class Reference}
+\label{classFibonacciHeap}\index{FibonacciHeap@{FibonacciHeap}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFibonacciHeap_ac053cdb66516a33d1bf65a02a73dee67}{Fibonacci\+Heap}} ()
+\item 
+void \mbox{\hyperlink{classFibonacciHeap_a4cb6832896779f03270b8924919ae35d}{insert\+Heap\+Node}} (char v1, int weight)
+\item 
+void \mbox{\hyperlink{classFibonacciHeap_ad1bea52a69ffc387a27dcad6ecfadd76}{Fibonacci}} (\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$ptr2, \mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$ptr1)
+\item 
+void \mbox{\hyperlink{classFibonacciHeap_aba92103de0300071f5d00564f5ef85e0}{check}} ()
+\item 
+\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$ \mbox{\hyperlink{classFibonacciHeap_afdf277922f235a45ca7c0db03cabafa1}{get\+Minimum\+Node}} ()
+\item 
+void \mbox{\hyperlink{classFibonacciHeap_ac780e05905a4a352b61cbad9734d4b5f}{make\+Null\+Point}} (\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$found, \mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{classFibonacciHeap_abe1dfab41668f8f9b3d9519ab316331d}{cascade\+Null\+Point}} (\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$temp)
+\item 
+\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$ \mbox{\hyperlink{classFibonacciHeap_aefea540c6e2dc75e3653765cb533fd34}{Get\+Node}} (\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}, char v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$ \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}
+\item 
+int \mbox{\hyperlink{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+F\+I\+B\+O\+N\+A\+C\+CI H\+E\+AP C\+L\+A\+SS 
+
+Definition at line 141 of file a5q3.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFibonacciHeap_ac053cdb66516a33d1bf65a02a73dee67}\label{classFibonacciHeap_ac053cdb66516a33d1bf65a02a73dee67}} 
+\index{FibonacciHeap@{FibonacciHeap}!FibonacciHeap@{FibonacciHeap}}
+\index{FibonacciHeap@{FibonacciHeap}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{FibonacciHeap()}{FibonacciHeap()}}
+{\footnotesize\ttfamily Fibonacci\+Heap\+::\+Fibonacci\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 147 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148     \{}
+\DoxyCodeLine{149         \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{150         \mbox{\hyperlink{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}{nodes}} = 0;}
+\DoxyCodeLine{151     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFibonacciHeap_abe1dfab41668f8f9b3d9519ab316331d}\label{classFibonacciHeap_abe1dfab41668f8f9b3d9519ab316331d}} 
+\index{FibonacciHeap@{FibonacciHeap}!cascadeNullPoint@{cascadeNullPoint}}
+\index{cascadeNullPoint@{cascadeNullPoint}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{cascadeNullPoint()}{cascadeNullPoint()}}
+{\footnotesize\ttfamily void Fibonacci\+Heap\+::cascade\+Null\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 388 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{389     \{}
+\DoxyCodeLine{390         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* ptr5 = temp-\/>\mbox{\hyperlink{classNode__Heap_a74befeb252f39c8df00fc81e543d1bf8}{parent}};}
+\DoxyCodeLine{391         \textcolor{keywordflow}{if} (ptr5 != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{392         \{}
+\DoxyCodeLine{393             \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classNode__Heap_aa4918b35693ca94ffc0e5ddb961b671e}{mark}} == \textcolor{charliteral}{'W'})}
+\DoxyCodeLine{394             \{}
+\DoxyCodeLine{395                 temp-\/>\mbox{\hyperlink{classNode__Heap_aa4918b35693ca94ffc0e5ddb961b671e}{mark}} = \textcolor{charliteral}{'B'};}
+\DoxyCodeLine{396             \}}
+\DoxyCodeLine{397             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{398             \{}
+\DoxyCodeLine{399                 \mbox{\hyperlink{classFibonacciHeap_ac780e05905a4a352b61cbad9734d4b5f}{makeNullPoint}}(temp, ptr5);}
+\DoxyCodeLine{400                 \mbox{\hyperlink{classFibonacciHeap_abe1dfab41668f8f9b3d9519ab316331d}{cascadeNullPoint}}(ptr5);}
+\DoxyCodeLine{401             \}}
+\DoxyCodeLine{402         \}}
+\DoxyCodeLine{403     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFibonacciHeap_aba92103de0300071f5d00564f5ef85e0}\label{classFibonacciHeap_aba92103de0300071f5d00564f5ef85e0}} 
+\index{FibonacciHeap@{FibonacciHeap}!check@{check}}
+\index{check@{check}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily void Fibonacci\+Heap\+::check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 220 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{221     \{}
+\DoxyCodeLine{222         \textcolor{keywordtype}{int} temp1;}
+\DoxyCodeLine{223         \textcolor{keywordtype}{int} temp2 = (int)(log(\mbox{\hyperlink{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}{nodes}})/log(2));}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}** arr = \textcolor{keyword}{new} \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}*[temp2 + 1];}
+\DoxyCodeLine{226         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= temp2; ++i)}
+\DoxyCodeLine{227         \{}
+\DoxyCodeLine{228             arr[i] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{229         \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* ptr1 = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{232         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* ptr2;}
+\DoxyCodeLine{233         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* ptr3;}
+\DoxyCodeLine{234         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* ptr4 = ptr1;}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236         \textcolor{keywordflow}{do}}
+\DoxyCodeLine{237         \{}
+\DoxyCodeLine{238             ptr4 = ptr4-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{239             temp1 = ptr1-\/>\mbox{\hyperlink{classNode__Heap_aa8e74159af550cc1093146cbfc56a574}{degree}};}
+\DoxyCodeLine{240             \textcolor{keywordflow}{while}(arr[temp1] != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{241             \{}
+\DoxyCodeLine{242                 ptr2 = arr[temp1];}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244                 \textcolor{keywordflow}{if} (ptr1-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} > ptr2-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}})}
+\DoxyCodeLine{245                 \{}
+\DoxyCodeLine{246                     ptr3 = ptr1;}
+\DoxyCodeLine{247                     ptr1 = ptr2;}
+\DoxyCodeLine{248                     ptr2 = ptr3;}
+\DoxyCodeLine{249                 \}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251                 \textcolor{keywordflow}{if} (ptr2 == \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}})}
+\DoxyCodeLine{252                 \{}
+\DoxyCodeLine{253                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = ptr1;}
+\DoxyCodeLine{254                 \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256                 \mbox{\hyperlink{classFibonacciHeap_ad1bea52a69ffc387a27dcad6ecfadd76}{Fibonacci}}(ptr2, ptr1);}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258                 \textcolor{keywordflow}{if} (ptr1-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} == ptr1)}
+\DoxyCodeLine{259                 \{}
+\DoxyCodeLine{260                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = ptr1;}
+\DoxyCodeLine{261                 \}}
+\DoxyCodeLine{262                 arr[temp1] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{263                 temp1++;}
+\DoxyCodeLine{264             \}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266             arr[temp1] = ptr1;}
+\DoxyCodeLine{267             ptr1 = ptr1-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269         \}\textcolor{keywordflow}{while}(ptr1 != \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}});}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271         \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j <= temp2; ++j)}
+\DoxyCodeLine{274         \{}
+\DoxyCodeLine{275             \textcolor{keywordflow}{if} (arr[j] != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{276             \{}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278                 arr[j]-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = arr[j];}
+\DoxyCodeLine{279                 arr[j]-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = arr[j];}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{282                 \{}
+\DoxyCodeLine{283                     (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}})-\/>right = arr[j];}
+\DoxyCodeLine{284                     arr[j]-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{285                     arr[j]-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{286                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = arr[j];}
+\DoxyCodeLine{287                     \textcolor{keywordflow}{if} (arr[j]-\/>key < minimum-\/>key)}
+\DoxyCodeLine{288                     \{}
+\DoxyCodeLine{289                         \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = arr[j];}
+\DoxyCodeLine{290                     \}}
+\DoxyCodeLine{291                 \}}
+\DoxyCodeLine{292                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{293                 \{}
+\DoxyCodeLine{294                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = arr[j];}
+\DoxyCodeLine{295                 \}}
+\DoxyCodeLine{296                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{297                 \{}
+\DoxyCodeLine{298                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = arr[j];}
+\DoxyCodeLine{299                 \}}
+\DoxyCodeLine{300                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(arr[j]-\/>key < minimum-\/>key)}
+\DoxyCodeLine{301                 \{}
+\DoxyCodeLine{302                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = arr[j];}
+\DoxyCodeLine{303                 \}}
+\DoxyCodeLine{304             \}}
+\DoxyCodeLine{305         \}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFibonacciHeap_ad1bea52a69ffc387a27dcad6ecfadd76}\label{classFibonacciHeap_ad1bea52a69ffc387a27dcad6ecfadd76}} 
+\index{FibonacciHeap@{FibonacciHeap}!Fibonacci@{Fibonacci}}
+\index{Fibonacci@{Fibonacci}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{Fibonacci()}{Fibonacci()}}
+{\footnotesize\ttfamily void Fibonacci\+Heap\+::\+Fibonacci (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$}]{ptr2,  }\item[{\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$}]{ptr1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+L\+I\+NK M\+E\+T\+H\+OD 
+\begin{DoxyParams}{Parameters}
+{\em ptr2} & \\
+\hline
+{\em ptr1} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{190     \{}
+\DoxyCodeLine{191         (ptr2-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}})-\/>right = ptr2-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{192         (ptr2-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}})-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = ptr2-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         \textcolor{keywordflow}{if} (ptr1-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} == ptr1)}
+\DoxyCodeLine{195         \{}
+\DoxyCodeLine{196             \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = ptr1;}
+\DoxyCodeLine{197         \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199         ptr2-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = ptr2;}
+\DoxyCodeLine{200         ptr2-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = ptr2;}
+\DoxyCodeLine{201         ptr2-\/>\mbox{\hyperlink{classNode__Heap_a74befeb252f39c8df00fc81e543d1bf8}{parent}} = ptr1;}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203         \textcolor{keywordflow}{if} (ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{204         \{}
+\DoxyCodeLine{205             ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} = ptr2;}
+\DoxyCodeLine{206         \}}
+\DoxyCodeLine{207         ptr2-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}};}
+\DoxyCodeLine{208         ptr2-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = (ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}})-\/>left;}
+\DoxyCodeLine{209         ((ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}})-\/>left)-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = ptr2;}
+\DoxyCodeLine{210         (ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}})-\/>left = ptr2;}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212         \textcolor{keywordflow}{if} (ptr2-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} < (ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}})-\/>key)}
+\DoxyCodeLine{213         \{}
+\DoxyCodeLine{214             ptr1-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} = ptr2;}
+\DoxyCodeLine{215         \}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         ptr1-\/>\mbox{\hyperlink{classNode__Heap_aa8e74159af550cc1093146cbfc56a574}{degree}}++;}
+\DoxyCodeLine{218     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFibonacciHeap_afdf277922f235a45ca7c0db03cabafa1}\label{classFibonacciHeap_afdf277922f235a45ca7c0db03cabafa1}} 
+\index{FibonacciHeap@{FibonacciHeap}!getMinimumNode@{getMinimumNode}}
+\index{getMinimumNode@{getMinimumNode}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{getMinimumNode()}{getMinimumNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}}$\ast$ Fibonacci\+Heap\+::get\+Minimum\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+F\+I\+ND N\+O\+DE W\+I\+TH M\+I\+N\+I\+M\+UM K\+EY \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 313 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{314     \{}
+\DoxyCodeLine{315         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* retVal = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{316         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{317         \{}
+\DoxyCodeLine{318             \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* temp = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{319             \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* pntr;}
+\DoxyCodeLine{320             pntr = temp;}
+\DoxyCodeLine{321             \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* x = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{322             \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324                 x = temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}};}
+\DoxyCodeLine{325                 \textcolor{keywordflow}{do}}
+\DoxyCodeLine{326                 \{}
+\DoxyCodeLine{327                     pntr = x-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{328                     (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}})-\/>right = x;}
+\DoxyCodeLine{329                     x-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{330                     x-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{331                     \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = x;}
+\DoxyCodeLine{332                     \textcolor{keywordflow}{if} (x-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} < \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}})}
+\DoxyCodeLine{333                     \{}
+\DoxyCodeLine{334                         \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = x;}
+\DoxyCodeLine{335                     \}}
+\DoxyCodeLine{336                     x-\/>\mbox{\hyperlink{classNode__Heap_a74befeb252f39c8df00fc81e543d1bf8}{parent}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{337                     x = pntr;}
+\DoxyCodeLine{338                 \} \textcolor{keywordflow}{while} (pntr != temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}});}
+\DoxyCodeLine{339             \}}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341             (temp-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}})-\/>right = temp-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{342             (temp-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}})-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = temp-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{343             \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = temp-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345             \textcolor{keywordflow}{if} (temp == temp-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} \&\& temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{346             \{}
+\DoxyCodeLine{347                 \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{348             \}}
+\DoxyCodeLine{349             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{350             \{}
+\DoxyCodeLine{351                 \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = temp-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{352                 \mbox{\hyperlink{classFibonacciHeap_aba92103de0300071f5d00564f5ef85e0}{check}}();}
+\DoxyCodeLine{353             \}}
+\DoxyCodeLine{354             \mbox{\hyperlink{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}{nodes}}-\/-\/;}
+\DoxyCodeLine{355         \}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357         \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFibonacciHeap_aefea540c6e2dc75e3653765cb533fd34}\label{classFibonacciHeap_aefea540c6e2dc75e3653765cb533fd34}} 
+\index{FibonacciHeap@{FibonacciHeap}!GetNode@{GetNode}}
+\index{GetNode@{GetNode}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{GetNode()}{GetNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}}$\ast$ Fibonacci\+Heap\+::\+Get\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$}]{minimum,  }\item[{char}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 405 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{406     \{}
+\DoxyCodeLine{407         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* toReturn;}
+\DoxyCodeLine{408         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* found = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{409         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* temp5 = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{410         temp5-\/>\mbox{\hyperlink{classNode__Heap_a2775e3dad42aeef7e159288dd63da927}{c}} = \textcolor{charliteral}{'Y'};}
+\DoxyCodeLine{411         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* found\_ptr = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413         \textcolor{keywordflow}{if} (temp5-\/>\mbox{\hyperlink{classNode__Heap_a2f9374ea77c58af3d9d236ab2972b7b5}{v1}} == v)}
+\DoxyCodeLine{414         \{}
+\DoxyCodeLine{415             found\_ptr = temp5;}
+\DoxyCodeLine{416             temp5-\/>\mbox{\hyperlink{classNode__Heap_a2775e3dad42aeef7e159288dd63da927}{c}} = \textcolor{charliteral}{'N'};}
+\DoxyCodeLine{417             found = found\_ptr;}
+\DoxyCodeLine{418             toReturn = found;}
+\DoxyCodeLine{419         \}}
+\DoxyCodeLine{420         \textcolor{keywordflow}{if} (found\_ptr == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{421         \{}
+\DoxyCodeLine{422             \textcolor{keywordflow}{if} (temp5-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{423             \{}
+\DoxyCodeLine{424                 toReturn = \mbox{\hyperlink{classFibonacciHeap_aefea540c6e2dc75e3653765cb533fd34}{GetNode}}(temp5-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}}, v);}
+\DoxyCodeLine{425             \}}
+\DoxyCodeLine{426             \textcolor{keywordflow}{if} ((temp5-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}})-\/>c != \textcolor{charliteral}{'Y'})}
+\DoxyCodeLine{427             \{}
+\DoxyCodeLine{428                 toReturn = \mbox{\hyperlink{classFibonacciHeap_aefea540c6e2dc75e3653765cb533fd34}{GetNode}}(temp5-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}}, v);}
+\DoxyCodeLine{429             \}}
+\DoxyCodeLine{430         \}}
+\DoxyCodeLine{431         temp5-\/>\mbox{\hyperlink{classNode__Heap_a2775e3dad42aeef7e159288dd63da927}{c}} = \textcolor{charliteral}{'N'};}
+\DoxyCodeLine{432         found = found\_ptr;}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434         \textcolor{keywordflow}{return} toReturn;}
+\DoxyCodeLine{435     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFibonacciHeap_a4cb6832896779f03270b8924919ae35d}\label{classFibonacciHeap_a4cb6832896779f03270b8924919ae35d}} 
+\index{FibonacciHeap@{FibonacciHeap}!insertHeapNode@{insertHeapNode}}
+\index{insertHeapNode@{insertHeapNode}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{insertHeapNode()}{insertHeapNode()}}
+{\footnotesize\ttfamily void Fibonacci\+Heap\+::insert\+Heap\+Node (\begin{DoxyParamCaption}\item[{char}]{v1,  }\item[{int}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+TO I\+N\+S\+E\+RT N\+O\+D\+E\+IN H\+E\+AP 
+\begin{DoxyParams}{Parameters}
+{\em v1} & \\
+\hline
+{\em weight} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* node = \textcolor{keyword}{new} \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}(v1, weight);}
+\DoxyCodeLine{160         node-\/>\mbox{\hyperlink{classNode__Heap_aa8e74159af550cc1093146cbfc56a574}{degree}} = 0;}
+\DoxyCodeLine{161         node-\/>\mbox{\hyperlink{classNode__Heap_a2775e3dad42aeef7e159288dd63da927}{c}} = \textcolor{charliteral}{'N'};}
+\DoxyCodeLine{162         node-\/>\mbox{\hyperlink{classNode__Heap_a74befeb252f39c8df00fc81e543d1bf8}{parent}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{163         node-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{164         node-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = node;}
+\DoxyCodeLine{165         node-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = node;}
+\DoxyCodeLine{166         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{167         \{}
+\DoxyCodeLine{168             \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}}-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = node;}
+\DoxyCodeLine{169             node-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{170             node-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{171             \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = node;}
+\DoxyCodeLine{172             \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} < \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}})}
+\DoxyCodeLine{173             \{}
+\DoxyCodeLine{174                 \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = node;}
+\DoxyCodeLine{175             \}}
+\DoxyCodeLine{176         \}}
+\DoxyCodeLine{177         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{178         \{}
+\DoxyCodeLine{179             \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = node;}
+\DoxyCodeLine{180         \}}
+\DoxyCodeLine{181         \mbox{\hyperlink{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}{nodes}}++;}
+\DoxyCodeLine{182     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFibonacciHeap_ac780e05905a4a352b61cbad9734d4b5f}\label{classFibonacciHeap_ac780e05905a4a352b61cbad9734d4b5f}} 
+\index{FibonacciHeap@{FibonacciHeap}!makeNullPoint@{makeNullPoint}}
+\index{makeNullPoint@{makeNullPoint}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{makeNullPoint()}{makeNullPoint()}}
+{\footnotesize\ttfamily void Fibonacci\+Heap\+::make\+Null\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$}]{found,  }\item[{\mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 362 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{363     \{}
+\DoxyCodeLine{364         \textcolor{keywordflow}{if} (found == found-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}})}
+\DoxyCodeLine{365         \{}
+\DoxyCodeLine{366             temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{367         \}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369         (found-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}})-\/>right = found-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{370         (found-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}})-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = found-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372         \textcolor{keywordflow}{if} (found == temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}})}
+\DoxyCodeLine{373         \{}
+\DoxyCodeLine{374             temp-\/>\mbox{\hyperlink{classNode__Heap_a5d55fa458031521f7b8677b507b0860c}{child}} = found-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}};}
+\DoxyCodeLine{375         \}}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377         temp-\/>\mbox{\hyperlink{classNode__Heap_aa8e74159af550cc1093146cbfc56a574}{degree}} = temp-\/>\mbox{\hyperlink{classNode__Heap_aa8e74159af550cc1093146cbfc56a574}{degree}} -\/ 1;}
+\DoxyCodeLine{378         found-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = found;}
+\DoxyCodeLine{379         found-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = found;}
+\DoxyCodeLine{380         (\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}})-\/>right = found;}
+\DoxyCodeLine{381         found-\/>\mbox{\hyperlink{classNode__Heap_aef31473285996f604d47193146af0977}{right}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}};}
+\DoxyCodeLine{382         found-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}};}
+\DoxyCodeLine{383         \mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a9f20938aa0889e91262245d0b75a38fd}{left}} = found;}
+\DoxyCodeLine{384         found-\/>\mbox{\hyperlink{classNode__Heap_a74befeb252f39c8df00fc81e543d1bf8}{parent}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{385         found-\/>\mbox{\hyperlink{classNode__Heap_aa4918b35693ca94ffc0e5ddb961b671e}{mark}} = \textcolor{charliteral}{'B'};}
+\DoxyCodeLine{386     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}\label{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}} 
+\index{FibonacciHeap@{FibonacciHeap}!minimum@{minimum}}
+\index{minimum@{minimum}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{minimum}{minimum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}}$\ast$ Fibonacci\+Heap\+::minimum}
+
+
+
+Definition at line 144 of file a5q3.\+cpp.
+
+\mbox{\Hypertarget{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}\label{classFibonacciHeap_acdf028013c486dbd6efb97e08b969a4b}} 
+\index{FibonacciHeap@{FibonacciHeap}!nodes@{nodes}}
+\index{nodes@{nodes}!FibonacciHeap@{FibonacciHeap}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily int Fibonacci\+Heap\+::nodes}
+
+
+
+Definition at line 145 of file a5q3.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a5q3_8cpp}{a5q3.\+cpp}}\end{DoxyCompactItemize}

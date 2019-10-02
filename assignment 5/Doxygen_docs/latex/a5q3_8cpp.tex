@@ -1,0 +1,179 @@
+\hypertarget{a5q3_8cpp}{}\doxysection{a5q3.\+cpp File Reference}
+\label{a5q3_8cpp}\index{a5q3.cpp@{a5q3.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMainGraph}{Main\+Graph}}
+\item 
+class \mbox{\hyperlink{classNode__Heap}{Node\+\_\+\+Heap}}
+\item 
+class \mbox{\hyperlink{classFibonacciHeap}{Fibonacci\+Heap}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a5q3_8cpp_adc4a0b0a5a1a48a84a2d0be7c04bb3a8}{newwick}} (vector$<$ string $>$ $\ast$$\ast$wick, \mbox{\hyperlink{classMainGraph}{Main\+Graph}} $\ast$mst, char $\ast$parent, char v)
+\item 
+int \mbox{\hyperlink{a5q3_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a5q3_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{a5q3_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{a5q3.cpp@{a5q3.cpp}!main@{main}}
+\index{main@{main}!a5q3.cpp@{a5q3.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+M\+A\+IN M\+E\+T\+H\+OD \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 476 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{477 \{}
+\DoxyCodeLine{478     \mbox{\hyperlink{classMainGraph}{MainGraph}}* graph = \textcolor{keyword}{new} \mbox{\hyperlink{classMainGraph}{MainGraph}}();}
+\DoxyCodeLine{479     graph-\/>\mbox{\hyperlink{classMainGraph_ae7ab92af42bd27d0a3ccf50c0da44d93}{FileRead}}(\textcolor{stringliteral}{"2019\_CSN\_261\_L5\_P2.csv"});}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481     \mbox{\hyperlink{classFibonacciHeap}{FibonacciHeap}}* fibonacciHeap = \textcolor{keyword}{new} \mbox{\hyperlink{classFibonacciHeap}{FibonacciHeap}}();}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483     \textcolor{keywordtype}{bool}* mstSet = \textcolor{keyword}{new} \textcolor{keywordtype}{bool}[graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}];}
+\DoxyCodeLine{484     \textcolor{keywordtype}{char}* parent = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}];}
+\DoxyCodeLine{485     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{486     \{}
+\DoxyCodeLine{487         mstSet[i] = \textcolor{keyword}{false};}
+\DoxyCodeLine{488         parent[i] = -\/1;}
+\DoxyCodeLine{489     \}}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491     fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_a4cb6832896779f03270b8924919ae35d}{insertHeapNode}}((\textcolor{keywordtype}{char}) 65, 0);}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{494     \{}
+\DoxyCodeLine{495         fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_a4cb6832896779f03270b8924919ae35d}{insertHeapNode}}((\textcolor{keywordtype}{char}) (i + 65), INT\_MAX);}
+\DoxyCodeLine{496     \}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} -\/ 1; ++i)}
+\DoxyCodeLine{499     \{}
+\DoxyCodeLine{500         \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* min = fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_afdf277922f235a45ca7c0db03cabafa1}{getMinimumNode}}();}
+\DoxyCodeLine{501         mstSet[min-\/>\mbox{\hyperlink{classNode__Heap_a2f9374ea77c58af3d9d236ab2972b7b5}{v1}} \% 65] = \textcolor{keyword}{true};}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{504         \{}
+\DoxyCodeLine{505             \mbox{\hyperlink{classNode__Heap}{Node\_Heap}}* node = fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_aefea540c6e2dc75e3653765cb533fd34}{GetNode}}(fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}, i + 65);}
+\DoxyCodeLine{506             \textcolor{keywordflow}{if} (node != \textcolor{keyword}{nullptr} \&\& graph-\/>\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[min-\/>\mbox{\hyperlink{classNode__Heap_a2f9374ea77c58af3d9d236ab2972b7b5}{v1}} \% 65][i] != 0 \&\& mstSet[i] == \textcolor{keyword}{false} \&\& graph-\/>\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[min-\/>\mbox{\hyperlink{classNode__Heap_a2f9374ea77c58af3d9d236ab2972b7b5}{v1}} \% 65][i] < node-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} )}
+\DoxyCodeLine{507             \{}
+\DoxyCodeLine{508                 parent[i] = min-\/>\mbox{\hyperlink{classNode__Heap_a2f9374ea77c58af3d9d236ab2972b7b5}{v1}} \% 65;}
+\DoxyCodeLine{509                 node-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} = graph-\/>\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[min-\/>\mbox{\hyperlink{classNode__Heap_a2f9374ea77c58af3d9d236ab2972b7b5}{v1}} \% 65][i];}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511                 \mbox{\hyperlink{classNode__Heap}{Node\_Heap}} *temp = node-\/>\mbox{\hyperlink{classNode__Heap_a74befeb252f39c8df00fc81e543d1bf8}{parent}};}
+\DoxyCodeLine{512                 \textcolor{keywordflow}{if} (temp != \textcolor{keyword}{nullptr} \&\& node-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} < temp-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}}) \{}
+\DoxyCodeLine{513                     fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_ac780e05905a4a352b61cbad9734d4b5f}{makeNullPoint}}(node, temp);}
+\DoxyCodeLine{514                     fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_abe1dfab41668f8f9b3d9519ab316331d}{cascadeNullPoint}}(temp);}
+\DoxyCodeLine{515                 \}}
+\DoxyCodeLine{516                 \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}} < fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}}-\/>\mbox{\hyperlink{classNode__Heap_a278bf3fed2460aa358bedccc8b47348c}{key}}) \{}
+\DoxyCodeLine{517                     fibonacciHeap-\/>\mbox{\hyperlink{classFibonacciHeap_a3133109a95ec1d958d0de33aad78a032}{minimum}} = node;}
+\DoxyCodeLine{518                 \}}
+\DoxyCodeLine{519             \}}
+\DoxyCodeLine{520         \}}
+\DoxyCodeLine{521     \}}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523     \mbox{\hyperlink{classMainGraph}{MainGraph}}* mst = \textcolor{keyword}{new} \mbox{\hyperlink{classMainGraph}{MainGraph}}();}
+\DoxyCodeLine{524     \textcolor{keywordtype}{int} tot\_weight = 0;}
+\DoxyCodeLine{525     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < graph-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{526     \{}
+\DoxyCodeLine{527         \textcolor{keywordtype}{int} curr\_weight = graph-\/>\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[i][parent[i]];}
+\DoxyCodeLine{528         tot\_weight += curr\_weight;}
+\DoxyCodeLine{529         mst-\/>\mbox{\hyperlink{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}{addLine}}((\textcolor{keywordtype}{char}) (parent[i] + 65), (\textcolor{keywordtype}{char}) (i + 65), curr\_weight);}
+\DoxyCodeLine{530     \}}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532     mst-\/>\mbox{\hyperlink{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}{printGraph}}();}
+\DoxyCodeLine{533     cout << endl;}
+\DoxyCodeLine{534     cout << \textcolor{stringliteral}{"The total edge weight of the MST is : "} << tot\_weight << endl;}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536     vector<string>** wick = \textcolor{keyword}{new} vector<string>*[mst-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}];}
+\DoxyCodeLine{537     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < mst-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{538     \{}
+\DoxyCodeLine{539         wick[i] = \textcolor{keyword}{new} vector<string>();}
+\DoxyCodeLine{540     \}}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542     \mbox{\hyperlink{a5q3_8cpp_adc4a0b0a5a1a48a84a2d0be7c04bb3a8}{newwick}}(wick,mst,parent,\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{543     \textcolor{keywordtype}{string} s = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{544     \textcolor{keywordflow}{if} (!wick[0]-\/>empty())}
+\DoxyCodeLine{545     \{}
+\DoxyCodeLine{546         s += \textcolor{stringliteral}{"("};}
+\DoxyCodeLine{547         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = wick[0]-\/>begin(); it != wick[0]-\/>end(); ++it)}
+\DoxyCodeLine{548         \{}
+\DoxyCodeLine{549             s += *it;}
+\DoxyCodeLine{550             \textcolor{keywordflow}{if} (*it != wick[0]-\/>back())}
+\DoxyCodeLine{551             \{}
+\DoxyCodeLine{552                 s+= \textcolor{stringliteral}{","};}
+\DoxyCodeLine{553             \}}
+\DoxyCodeLine{554         \}}
+\DoxyCodeLine{555         s+= \textcolor{stringliteral}{")"};}
+\DoxyCodeLine{556     \}}
+\DoxyCodeLine{557     s+=\textcolor{stringliteral}{"A;"};}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559     ofstream inputFile;}
+\DoxyCodeLine{560     inputFile.open(\textcolor{stringliteral}{"prim.nw"});}
+\DoxyCodeLine{561     \textcolor{keywordflow}{if} (inputFile.is\_open())}
+\DoxyCodeLine{562     \{}
+\DoxyCodeLine{563         inputFile << s << endl;}
+\DoxyCodeLine{564         inputFile.close();}
+\DoxyCodeLine{565     \}}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{568 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a5q3_8cpp_adc4a0b0a5a1a48a84a2d0be7c04bb3a8}\label{a5q3_8cpp_adc4a0b0a5a1a48a84a2d0be7c04bb3a8}} 
+\index{a5q3.cpp@{a5q3.cpp}!newwick@{newwick}}
+\index{newwick@{newwick}!a5q3.cpp@{a5q3.cpp}}
+\doxysubsubsection{\texorpdfstring{newwick()}{newwick()}}
+{\footnotesize\ttfamily void newwick (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ $\ast$$\ast$}]{wick,  }\item[{\mbox{\hyperlink{classMainGraph}{Main\+Graph}} $\ast$}]{mst,  }\item[{char $\ast$}]{parent,  }\item[{char}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line 441 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{442 \{}
+\DoxyCodeLine{443     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < mst-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{444     \{}
+\DoxyCodeLine{445         \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{char})(parent[i]+65) == v)}
+\DoxyCodeLine{446         \{}
+\DoxyCodeLine{447             \mbox{\hyperlink{a5q3_8cpp_adc4a0b0a5a1a48a84a2d0be7c04bb3a8}{newwick}}(wick,mst,parent,(\textcolor{keywordtype}{char})(i+65));}
+\DoxyCodeLine{448             \textcolor{keywordtype}{string} s = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{449             \textcolor{keywordflow}{if} (!wick[i]-\/>empty())}
+\DoxyCodeLine{450             \{}
+\DoxyCodeLine{451                 s += \textcolor{stringliteral}{"("};}
+\DoxyCodeLine{452                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = wick[i]-\/>begin(); it != wick[i]-\/>end(); ++it)}
+\DoxyCodeLine{453                 \{}
+\DoxyCodeLine{454                     s += *it;}
+\DoxyCodeLine{455                     \textcolor{keywordflow}{if} (*it != wick[i]-\/>back())}
+\DoxyCodeLine{456                     \{}
+\DoxyCodeLine{457                         s+= \textcolor{stringliteral}{","};}
+\DoxyCodeLine{458                     \}}
+\DoxyCodeLine{459                 \}}
+\DoxyCodeLine{460                 s+= \textcolor{stringliteral}{")"};}
+\DoxyCodeLine{461             \}}
+\DoxyCodeLine{462             s+= (char)(i+65);}
+\DoxyCodeLine{463             s+= \textcolor{charliteral}{':'};}
+\DoxyCodeLine{464             s+= to\_string(mst-\/>\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[i][v\%65]);}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466             wick[v\%65]-\/>push\_back(s);}
+\DoxyCodeLine{467         \}}
+\DoxyCodeLine{468     \}}
+\DoxyCodeLine{469 \}}
+
+\end{DoxyCode}

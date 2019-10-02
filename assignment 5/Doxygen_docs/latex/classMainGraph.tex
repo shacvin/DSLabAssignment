@@ -1,0 +1,498 @@
+\hypertarget{classMainGraph}{}\doxysection{Main\+Graph Class Reference}
+\label{classMainGraph}\index{MainGraph@{MainGraph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainGraph_aac13deedccf2d67bf6a2c2b203a7b30e}{Main\+Graph}} ()
+\item 
+\mbox{\hyperlink{classLine}{Line}} $\ast$ \mbox{\hyperlink{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}{add\+Line}} (char v1, char v2, int weight)
+\item 
+\mbox{\hyperlink{classLine}{Line}} $\ast$ \mbox{\hyperlink{classMainGraph_a70e13210f9aea6374c737035c055b18e}{pop\+Line}} ()
+\item 
+void \mbox{\hyperlink{classMainGraph_a2f7e7685e196776e7c5ca3aecb8ce6fb}{remove}} (\mbox{\hyperlink{classLine}{Line}} $\ast$prev)
+\item 
+void \mbox{\hyperlink{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}{print\+Graph}} ()
+\item 
+bool \mbox{\hyperlink{classMainGraph_aca2f42dbc3c506ff6617308febfe3a29}{if\+Closed}} ()
+\item 
+int \mbox{\hyperlink{classMainGraph_a0650f129f7c96465c3b25a02ac69b4f9}{get\+Weight}} ()
+\item 
+void \mbox{\hyperlink{classMainGraph_a43032af2b68df9be0eb8922b876a8970}{dot}} (string file\+Name)
+\item 
+\mbox{\hyperlink{classMainGraph_aac13deedccf2d67bf6a2c2b203a7b30e}{Main\+Graph}} ()
+\item 
+int \mbox{\hyperlink{classMainGraph_a7ff4af199cd9d103d1697e4c8e7827f2}{vertices1}} ()
+\item 
+void \mbox{\hyperlink{classMainGraph_ae7ab92af42bd27d0a3ccf50c0da44d93}{File\+Read}} (string file\+Name)
+\item 
+void \mbox{\hyperlink{classMainGraph_a705438a9aa6d9dda7a27397a921bc73d}{add\+Line}} (char v1, char v2, int weight)
+\item 
+void \mbox{\hyperlink{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}{print\+Graph}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}
+\item 
+int \mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}}
+\item 
+\mbox{\hyperlink{classLine}{Line}} $\ast$ \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}
+\item 
+int \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}} \mbox{[}26\mbox{]}
+\item 
+int \mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}} \mbox{[}26\mbox{]}\mbox{[}26\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 24 of file a5q2.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainGraph_aac13deedccf2d67bf6a2c2b203a7b30e}\label{classMainGraph_aac13deedccf2d67bf6a2c2b203a7b30e}} 
+\index{MainGraph@{MainGraph}!MainGraph@{MainGraph}}
+\index{MainGraph@{MainGraph}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{MainGraph()}{MainGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Main\+Graph\+::\+Main\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 71 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72     \{}
+\DoxyCodeLine{73         this-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} = 0;}
+\DoxyCodeLine{74         this-\/>\mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}} = 0;}
+\DoxyCodeLine{75         \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}} = \textcolor{keyword}{new} \mbox{\hyperlink{classLine}{Line}}(0, 0, 0);}
+\DoxyCodeLine{76         \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{77         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 26; ++i)}
+\DoxyCodeLine{78         \{}
+\DoxyCodeLine{79             \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[i] = 0;}
+\DoxyCodeLine{80         \}}
+\DoxyCodeLine{81     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_aac13deedccf2d67bf6a2c2b203a7b30e}\label{classMainGraph_aac13deedccf2d67bf6a2c2b203a7b30e}} 
+\index{MainGraph@{MainGraph}!MainGraph@{MainGraph}}
+\index{MainGraph@{MainGraph}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{MainGraph()}{MainGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Main\+Graph\+::\+Main\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 26; ++i)}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; i < 26; ++i)}
+\DoxyCodeLine{29             \{}
+\DoxyCodeLine{30                 \mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[i][j] = 0;}
+\DoxyCodeLine{31             \}}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}\label{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}} 
+\index{MainGraph@{MainGraph}!addLine@{addLine}}
+\index{addLine@{addLine}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{addLine()}{addLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLine}{Line}}$\ast$ Main\+Graph\+::add\+Line (\begin{DoxyParamCaption}\item[{char}]{v1,  }\item[{char}]{v2,  }\item[{int}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 83 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85         \mbox{\hyperlink{classLine}{Line}}* edge = \textcolor{keyword}{new} \mbox{\hyperlink{classLine}{Line}}(v1, v2, weight);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \mbox{\hyperlink{classLine}{Line}}* it = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{88         \mbox{\hyperlink{classLine}{Line}}* prev = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}};}
+\DoxyCodeLine{89         \textcolor{keywordflow}{while}(it != \textcolor{keyword}{nullptr} \&\& it-\/>\mbox{\hyperlink{classLine_a31e5aa52ebdaab29b082649dc65e5a5f}{weight}} <= weight)}
+\DoxyCodeLine{90         \{}
+\DoxyCodeLine{91             prev = it;}
+\DoxyCodeLine{92             it = it-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94         edge-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}} = it;}
+\DoxyCodeLine{95         prev-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}} = edge;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[v1 \% 65]++;}
+\DoxyCodeLine{98         \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[v2 \% 65]++;}
+\DoxyCodeLine{99         this-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} = vertices1();}
+\DoxyCodeLine{100         this-\/>\mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}}++;}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} prev;}
+\DoxyCodeLine{102     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_a705438a9aa6d9dda7a27397a921bc73d}\label{classMainGraph_a705438a9aa6d9dda7a27397a921bc73d}} 
+\index{MainGraph@{MainGraph}!addLine@{addLine}}
+\index{addLine@{addLine}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{addLine()}{addLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Main\+Graph\+::add\+Line (\begin{DoxyParamCaption}\item[{char}]{v1,  }\item[{char}]{v2,  }\item[{int}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A\+DD L\+I\+NE TO G\+R\+A\+PH 
+\begin{DoxyParams}{Parameters}
+{\em v1} & \\
+\hline
+{\em v2} & \\
+\hline
+{\em weight} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93     \{}
+\DoxyCodeLine{94         \mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[v1\%65][v2\%65] = weight;}
+\DoxyCodeLine{95         \mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[v2\%65][v1\%65] = weight;}
+\DoxyCodeLine{96         this-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} = vertices1();}
+\DoxyCodeLine{97     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_a43032af2b68df9be0eb8922b876a8970}\label{classMainGraph_a43032af2b68df9be0eb8922b876a8970}} 
+\index{MainGraph@{MainGraph}!dot@{dot}}
+\index{dot@{dot}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily void Main\+Graph\+::dot (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 185 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{186     \{}
+\DoxyCodeLine{187         ofstream file;}
+\DoxyCodeLine{188         file.open(fileName);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190         \textcolor{keywordflow}{if} (file.is\_open())}
+\DoxyCodeLine{191         \{}
+\DoxyCodeLine{192             file << \textcolor{stringliteral}{"graph MST \{"} << endl;}
+\DoxyCodeLine{193             file << \textcolor{stringliteral}{"\(\backslash\)tgraph [ dpi = 1200 ];"} << endl;}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195             \textcolor{keywordflow}{for} (\mbox{\hyperlink{classLine}{Line}}* it = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}}; it != \textcolor{keyword}{nullptr}; it = it-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}})}
+\DoxyCodeLine{196             \{}
+\DoxyCodeLine{197                 file << \textcolor{stringliteral}{"\(\backslash\)t"} << it-\/>var1 << \textcolor{stringliteral}{" -\/-\/ "} << it-\/>var2 << \textcolor{stringliteral}{" [label="} << it-\/>weight << \textcolor{stringliteral}{"];"} << endl;}
+\DoxyCodeLine{198             \}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200             file << \textcolor{stringliteral}{"\}"} << endl;}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202             file.close();}
+\DoxyCodeLine{203         \}}
+\DoxyCodeLine{204     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_ae7ab92af42bd27d0a3ccf50c0da44d93}\label{classMainGraph_ae7ab92af42bd27d0a3ccf50c0da44d93}} 
+\index{MainGraph@{MainGraph}!FileRead@{FileRead}}
+\index{FileRead@{FileRead}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{FileRead()}{FileRead()}}
+{\footnotesize\ttfamily void Main\+Graph\+::\+File\+Read (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+R\+E\+AD I\+N\+P\+UT F\+I\+LE
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         ifstream file;}
+\DoxyCodeLine{67         file.open(fileName);}
+\DoxyCodeLine{68         \textcolor{keywordflow}{if} (file.is\_open())}
+\DoxyCodeLine{69         \{}
+\DoxyCodeLine{70             \textcolor{keywordtype}{string} temp;}
+\DoxyCodeLine{71             \textcolor{keywordflow}{while}(getline(file,temp))}
+\DoxyCodeLine{72             \{}
+\DoxyCodeLine{73                 \textcolor{keywordtype}{char} v1,v2,comma;}
+\DoxyCodeLine{74                 \textcolor{keywordtype}{int} weight;}
+\DoxyCodeLine{75                 stringstream s(temp);}
+\DoxyCodeLine{76                 s >> v1;}
+\DoxyCodeLine{77                 s >> comma;}
+\DoxyCodeLine{78                 s >> v2;}
+\DoxyCodeLine{79                 s >> comma;}
+\DoxyCodeLine{80                 s >> weight;}
+\DoxyCodeLine{81                 this-\/>\mbox{\hyperlink{classMainGraph_af5ed4bfa23cc5b1e7466526e6e2c8bb1}{addLine}}(v1, v2, weight);}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83             file.close();}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_a0650f129f7c96465c3b25a02ac69b4f9}\label{classMainGraph_a0650f129f7c96465c3b25a02ac69b4f9}} 
+\index{MainGraph@{MainGraph}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily int Main\+Graph\+::get\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 174 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175     \{}
+\DoxyCodeLine{176         \textcolor{keywordtype}{int} wt = 0;}
+\DoxyCodeLine{177         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classLine}{Line}}* it = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}}; it != \textcolor{keyword}{nullptr}; it = it-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}})}
+\DoxyCodeLine{178         \{}
+\DoxyCodeLine{179             wt += it-\/>weight;}
+\DoxyCodeLine{180         \}}
+\DoxyCodeLine{181         \textcolor{keywordflow}{return} wt;}
+\DoxyCodeLine{182     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_aca2f42dbc3c506ff6617308febfe3a29}\label{classMainGraph_aca2f42dbc3c506ff6617308febfe3a29}} 
+\index{MainGraph@{MainGraph}!ifClosed@{ifClosed}}
+\index{ifClosed@{ifClosed}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{ifClosed()}{ifClosed()}}
+{\footnotesize\ttfamily bool Main\+Graph\+::if\+Closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 148 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149     \{}
+\DoxyCodeLine{150         \textcolor{keywordtype}{int}* parent = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[26];}
+\DoxyCodeLine{151         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 26; ++i)}
+\DoxyCodeLine{152         \{}
+\DoxyCodeLine{153             parent[i] = -\/1;}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155         \mbox{\hyperlink{classLine}{Line}}* it = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{156         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}}; ++i)}
+\DoxyCodeLine{157         \{}
+\DoxyCodeLine{158             \textcolor{keywordtype}{int} set1 = findit(parent, it-\/>\mbox{\hyperlink{classLine_af33384845639f805ae71857b92e22a72}{var1}} \% 65);}
+\DoxyCodeLine{159             \textcolor{keywordtype}{int} set2 = findit(parent, it-\/>\mbox{\hyperlink{classLine_a677a28c6584d9b287f1a259660a15841}{var2}} \% 65);}
+\DoxyCodeLine{160             \textcolor{keywordflow}{if} (set1 == set2)}
+\DoxyCodeLine{161             \{}
+\DoxyCodeLine{162                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{163             \}}
+\DoxyCodeLine{164             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{165             \{}
+\DoxyCodeLine{166                 UnionFind(parent, set1, set2);}
+\DoxyCodeLine{167             \}}
+\DoxyCodeLine{168             it = it-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{169         \}}
+\DoxyCodeLine{170         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{171     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_a70e13210f9aea6374c737035c055b18e}\label{classMainGraph_a70e13210f9aea6374c737035c055b18e}} 
+\index{MainGraph@{MainGraph}!popLine@{popLine}}
+\index{popLine@{popLine}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{popLine()}{popLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLine}{Line}}$\ast$ Main\+Graph\+::pop\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 105 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106     \{}
+\DoxyCodeLine{107         \mbox{\hyperlink{classLine}{Line}}* edge = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{108         \textcolor{keywordflow}{if} (edge != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{109         \{}
+\DoxyCodeLine{110             \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}} = edge-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{111             edge-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{112             \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[edge-\/>\mbox{\hyperlink{classLine_af33384845639f805ae71857b92e22a72}{var1}} \% 65]-\/-\/;}
+\DoxyCodeLine{113             \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[edge-\/>\mbox{\hyperlink{classLine_a677a28c6584d9b287f1a259660a15841}{var2}} \% 65]-\/-\/;}
+\DoxyCodeLine{114             this-\/>\mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}}-\/-\/;}
+\DoxyCodeLine{115             this-\/>\mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} = vertices1();}
+\DoxyCodeLine{116             \textcolor{keywordflow}{return} edge;}
+\DoxyCodeLine{117         \}}
+\DoxyCodeLine{118         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{119         \{}
+\DoxyCodeLine{120             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{121         \}}
+\DoxyCodeLine{122     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}\label{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}} 
+\index{MainGraph@{MainGraph}!printGraph@{printGraph}}
+\index{printGraph@{printGraph}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{printGraph()}{printGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Main\+Graph\+::print\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+P\+R\+I\+NT F\+U\+LL G\+R\+A\+PH 
+
+Definition at line 101 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103         \textcolor{keywordtype}{int} \mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} = vertices1();}
+\DoxyCodeLine{104         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++i)}
+\DoxyCodeLine{105         \{}
+\DoxyCodeLine{106             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}}; ++j)}
+\DoxyCodeLine{107             \{}
+\DoxyCodeLine{108                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[i][j] > 0)}
+\DoxyCodeLine{109                 \{}
+\DoxyCodeLine{110                     cout << (char)(i+65) << \textcolor{charliteral}{','} << (char)(j+65) << \textcolor{charliteral}{','} << \mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[i][j] << endl;}
+\DoxyCodeLine{111                 \}}
+\DoxyCodeLine{112             \}}
+\DoxyCodeLine{113         \}}
+\DoxyCodeLine{114     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}\label{classMainGraph_abba37f3406a8a9265c449d1c07cf50a7}} 
+\index{MainGraph@{MainGraph}!printGraph@{printGraph}}
+\index{printGraph@{printGraph}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{printGraph()}{printGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Main\+Graph\+::print\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 137 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138     \{}
+\DoxyCodeLine{139         \mbox{\hyperlink{classLine}{Line}}* it = \mbox{\hyperlink{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}{head}}-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{140         \textcolor{keywordflow}{while}(it != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{141         \{}
+\DoxyCodeLine{142             cout << it-\/>\mbox{\hyperlink{classLine_af33384845639f805ae71857b92e22a72}{var1}} << \textcolor{stringliteral}{","} << it-\/>\mbox{\hyperlink{classLine_a677a28c6584d9b287f1a259660a15841}{var2}} << \textcolor{stringliteral}{","} << it-\/>\mbox{\hyperlink{classLine_a31e5aa52ebdaab29b082649dc65e5a5f}{weight}} << endl;}
+\DoxyCodeLine{143             it = it-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_a2f7e7685e196776e7c5ca3aecb8ce6fb}\label{classMainGraph_a2f7e7685e196776e7c5ca3aecb8ce6fb}} 
+\index{MainGraph@{MainGraph}!remove@{remove}}
+\index{remove@{remove}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Main\+Graph\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLine}{Line}} $\ast$}]{prev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 125 of file a5q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         \mbox{\hyperlink{classLine}{Line}}* temp = prev-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{128         prev-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}} = temp-\/>\mbox{\hyperlink{classLine_a4542595557c80930c2722a3924130bce}{xolo}};}
+\DoxyCodeLine{129         \mbox{\hyperlink{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}{lines}}-\/-\/;}
+\DoxyCodeLine{130         \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[temp-\/>\mbox{\hyperlink{classLine_af33384845639f805ae71857b92e22a72}{var1}} \% 65]-\/-\/;}
+\DoxyCodeLine{131         \mbox{\hyperlink{classMainGraph_afd7c85248534d6e8e577a301011eae97}{vertex}}[temp-\/>\mbox{\hyperlink{classLine_a677a28c6584d9b287f1a259660a15841}{var2}} \% 65]-\/-\/;}
+\DoxyCodeLine{132         \mbox{\hyperlink{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}{vertices}} = vertices1();}
+\DoxyCodeLine{133         \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{134     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainGraph_a7ff4af199cd9d103d1697e4c8e7827f2}\label{classMainGraph_a7ff4af199cd9d103d1697e4c8e7827f2}} 
+\index{MainGraph@{MainGraph}!vertices1@{vertices1}}
+\index{vertices1@{vertices1}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{vertices1()}{vertices1()}}
+{\footnotesize\ttfamily int Main\+Graph\+::vertices1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+F\+I\+ND N\+U\+M\+B\+ER OF V\+E\+R\+T\+I\+C\+ES \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 38 of file a5q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} \mbox{\hyperlink{a5q1_8cpp_a94ee4a812852256f2755da36f2ab3e80}{max}} = -\/1;}
+\DoxyCodeLine{41         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 26; ++i)}
+\DoxyCodeLine{42         \{}
+\DoxyCodeLine{43             \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{44             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 26; ++j)}
+\DoxyCodeLine{45             \{}
+\DoxyCodeLine{46                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMainGraph_a28217a2c4dddd6200a99958f76237a24}{adjacency}}[i][j] > 0)}
+\DoxyCodeLine{47                 \{}
+\DoxyCodeLine{48                     count = j+1;}
+\DoxyCodeLine{49                 \}}
+\DoxyCodeLine{50             \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52             \textcolor{keywordflow}{if} (count > \mbox{\hyperlink{a5q1_8cpp_a94ee4a812852256f2755da36f2ab3e80}{max}})}
+\DoxyCodeLine{53             \{}
+\DoxyCodeLine{54                 \mbox{\hyperlink{a5q1_8cpp_a94ee4a812852256f2755da36f2ab3e80}{max}} = count;}
+\DoxyCodeLine{55             \}}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57         \textcolor{keywordflow}{return} \mbox{\hyperlink{a5q1_8cpp_a94ee4a812852256f2755da36f2ab3e80}{max}};}
+\DoxyCodeLine{58     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMainGraph_a28217a2c4dddd6200a99958f76237a24}\label{classMainGraph_a28217a2c4dddd6200a99958f76237a24}} 
+\index{MainGraph@{MainGraph}!adjacency@{adjacency}}
+\index{adjacency@{adjacency}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{adjacency}{adjacency}}
+{\footnotesize\ttfamily int Main\+Graph\+::adjacency\mbox{[}26\mbox{]}\mbox{[}26\mbox{]}}
+
+
+
+Definition at line 21 of file a5q3.\+cpp.
+
+\mbox{\Hypertarget{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}\label{classMainGraph_ad2afeb6327af67a7bc3d39af8c075875}} 
+\index{MainGraph@{MainGraph}!head@{head}}
+\index{head@{head}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLine}{Line}}$\ast$ Main\+Graph\+::head}
+
+
+
+Definition at line 67 of file a5q2.\+cpp.
+
+\mbox{\Hypertarget{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}\label{classMainGraph_aa8b58de6421679aa0623f48b5c002b58}} 
+\index{MainGraph@{MainGraph}!lines@{lines}}
+\index{lines@{lines}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily int Main\+Graph\+::lines}
+
+
+
+Definition at line 66 of file a5q2.\+cpp.
+
+\mbox{\Hypertarget{classMainGraph_afd7c85248534d6e8e577a301011eae97}\label{classMainGraph_afd7c85248534d6e8e577a301011eae97}} 
+\index{MainGraph@{MainGraph}!vertex@{vertex}}
+\index{vertex@{vertex}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{vertex}{vertex}}
+{\footnotesize\ttfamily int Main\+Graph\+::vertex\mbox{[}26\mbox{]}}
+
+
+
+Definition at line 68 of file a5q2.\+cpp.
+
+\mbox{\Hypertarget{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}\label{classMainGraph_a804d2d7bd543b12f7a7846b6cea52cc9}} 
+\index{MainGraph@{MainGraph}!vertices@{vertices}}
+\index{vertices@{vertices}!MainGraph@{MainGraph}}
+\doxysubsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily int Main\+Graph\+::vertices}
+
+
+
+Definition at line 66 of file a5q2.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a5q2_8cpp}{a5q2.\+cpp}}\item 
+\mbox{\hyperlink{a5q3_8cpp}{a5q3.\+cpp}}\end{DoxyCompactItemize}
